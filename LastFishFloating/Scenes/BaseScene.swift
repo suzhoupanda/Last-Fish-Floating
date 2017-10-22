@@ -110,7 +110,9 @@ class BaseScene: SKScene{
         
         self.agentSystem.addComponent(self.player.agent)
         
-        
+        let cam = SKCameraNode()
+        self.camera = cam
+        worldNode.addChild(self.camera!)
     
         
     }
@@ -162,6 +164,9 @@ class BaseScene: SKScene{
     override func didSimulatePhysics() {
         super.didSimulatePhysics()
         
+        if self.camera != nil{
+            camera!.position = player.position
+        }
         
     }
     

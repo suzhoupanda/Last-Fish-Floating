@@ -18,6 +18,14 @@ class PHSScene: BaseScene{
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
+        
+        if let background = SKScene(fileNamed: "background1")?.childNode(withName: "Root"){
+            background.move(toParent: backgroundNode)
+        }
+        
+        let backgroundSound = SKAudioNode(fileNamed: "Polka Train.mp3")
+        self.addChild(backgroundSound)
+        
         let fish1 = Fish(baseScene: self, fishType: .OrangeFish, position: CGPoint(x: 100, y: 100), radius: 40.0)
         fish1.configureAgent(withMaxSpeed: 20, andWithMaxAccelerationOf: 40)
 

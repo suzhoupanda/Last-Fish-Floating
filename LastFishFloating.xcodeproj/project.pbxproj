@@ -13,6 +13,12 @@
 		BD02C5A91F9C7303009F6977 /* BFHScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5A81F9C7303009F6977 /* BFHScene.swift */; };
 		BD02C5AB1F9C7316009F6977 /* PHSScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5AA1F9C7316009F6977 /* PHSScene.swift */; };
 		BD02C5AD1F9C73E6009F6977 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5AC1F9C73E6009F6977 /* GameConstants.swift */; };
+		BD3BB03B1F9C917E00DCA40E /* background1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB03A1F9C917E00DCA40E /* background1.sks */; };
+		BD3BB0421F9C94C800DCA40E /* Night at the Beach.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB03F1F9C94BF00DCA40E /* Night at the Beach.mp3 */; };
+		BD3BB0431F9C94CC00DCA40E /* Polka Train.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB0401F9C94BF00DCA40E /* Polka Train.mp3 */; };
+		BD3BB0441F9C94CE00DCA40E /* Sad Descent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB0411F9C94C000DCA40E /* Sad Descent.mp3 */; };
+		BD3BB0451F9C94D100DCA40E /* Sad Town.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB03E1F9C94BF00DCA40E /* Sad Town.mp3 */; };
+		BD3BB0461F9C94D300DCA40E /* Space Cadet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB03D1F9C94BF00DCA40E /* Space Cadet.mp3 */; };
 		BD3FED821F9B70E400910AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FED811F9B70E400910AF7 /* AppDelegate.swift */; };
 		BD3FED861F9B70E400910AF7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD3FED851F9B70E400910AF7 /* Actions.sks */; };
 		BD3FED881F9B70E400910AF7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FED871F9B70E400910AF7 /* GameScene.swift */; };
@@ -58,6 +64,12 @@
 		BD02C5A81F9C7303009F6977 /* BFHScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFHScene.swift; sourceTree = "<group>"; };
 		BD02C5AA1F9C7316009F6977 /* PHSScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHSScene.swift; sourceTree = "<group>"; };
 		BD02C5AC1F9C73E6009F6977 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
+		BD3BB03A1F9C917E00DCA40E /* background1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = background1.sks; sourceTree = "<group>"; };
+		BD3BB03D1F9C94BF00DCA40E /* Space Cadet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Space Cadet.mp3"; sourceTree = "<group>"; };
+		BD3BB03E1F9C94BF00DCA40E /* Sad Town.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sad Town.mp3"; sourceTree = "<group>"; };
+		BD3BB03F1F9C94BF00DCA40E /* Night at the Beach.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Night at the Beach.mp3"; sourceTree = "<group>"; };
+		BD3BB0401F9C94BF00DCA40E /* Polka Train.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Polka Train.mp3"; sourceTree = "<group>"; };
+		BD3BB0411F9C94C000DCA40E /* Sad Descent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sad Descent.mp3"; sourceTree = "<group>"; };
 		BD3FED7E1F9B70E400910AF7 /* LastFishFloating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastFishFloating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3FED811F9B70E400910AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD3FED851F9B70E400910AF7 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -112,6 +124,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD3BB0391F9C916800DCA40E /* SKSFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BD3BB03A1F9C917E00DCA40E /* background1.sks */,
+			);
+			path = SKSFiles;
+			sourceTree = "<group>";
+		};
+		BD3BB03C1F9C94AE00DCA40E /* BackgroundMusic */ = {
+			isa = PBXGroup;
+			children = (
+				BD3BB03F1F9C94BF00DCA40E /* Night at the Beach.mp3 */,
+				BD3BB0401F9C94BF00DCA40E /* Polka Train.mp3 */,
+				BD3BB0411F9C94C000DCA40E /* Sad Descent.mp3 */,
+				BD3BB03E1F9C94BF00DCA40E /* Sad Town.mp3 */,
+				BD3BB03D1F9C94BF00DCA40E /* Space Cadet.mp3 */,
+			);
+			path = BackgroundMusic;
+			sourceTree = "<group>";
+		};
+		BD3BB0471F9C94D900DCA40E /* SoundEffects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SoundEffects;
+			sourceTree = "<group>";
+		};
 		BD3FED751F9B70E400910AF7 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +175,9 @@
 		BD3FED801F9B70E400910AF7 /* LastFishFloating */ = {
 			isa = PBXGroup;
 			children = (
+				BD3BB0471F9C94D900DCA40E /* SoundEffects */,
+				BD3BB03C1F9C94AE00DCA40E /* BackgroundMusic */,
+				BD3BB0391F9C916800DCA40E /* SKSFiles */,
 				BD3FEDC21F9B749900910AF7 /* Characters */,
 				BD3FEDBF1F9B739C00910AF7 /* GameUtil */,
 				BD3FEDB51F9B722500910AF7 /* Scenes */,
@@ -320,9 +362,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3BB0431F9C94CC00DCA40E /* Polka Train.mp3 in Resources */,
+				BD3BB03B1F9C917E00DCA40E /* background1.sks in Resources */,
+				BD3BB0421F9C94C800DCA40E /* Night at the Beach.mp3 in Resources */,
+				BD3BB0441F9C94CE00DCA40E /* Sad Descent.mp3 in Resources */,
 				BD3FED8D1F9B70E400910AF7 /* Main.storyboard in Resources */,
 				BD3FED8F1F9B70E400910AF7 /* Assets.xcassets in Resources */,
+				BD3BB0451F9C94D100DCA40E /* Sad Town.mp3 in Resources */,
 				BD3FED921F9B70E400910AF7 /* LaunchScreen.storyboard in Resources */,
+				BD3BB0461F9C94D300DCA40E /* Space Cadet.mp3 in Resources */,
 				BD3FED861F9B70E400910AF7 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
