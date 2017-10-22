@@ -18,6 +18,10 @@ class BaseScene: SKScene{
     let trackingAgent = GKAgent2D()
     var player: Player!
 
+    /** Some background files may contain placeholder nodes for paths followed by specific fish or for obstacles avoided by specific fish **/
+    
+    var obstacles: [GKObstacle]?
+    var paths: [GKPath]?
     
     /** The StopGoal and SeekGoal are fundamental to every scene, since they handle the mechanics of player movement, and are therefore defined as stored properties on the BaseScene**/
     

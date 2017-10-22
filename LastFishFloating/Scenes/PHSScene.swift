@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+
 class PHSScene: BaseScene{
     
     var fishManager: FishManager!
@@ -22,6 +23,8 @@ class PHSScene: BaseScene{
         if let background = SKScene(fileNamed: "background1")?.childNode(withName: "Root"){
             background.move(toParent: backgroundNode)
         }
+        
+       
         
         let backgroundSound = SKAudioNode(fileNamed: "Polka Train.mp3")
         self.addChild(backgroundSound)
@@ -37,8 +40,15 @@ class PHSScene: BaseScene{
 
         
         self.fishManager = FishManager(baseScene: self)
+       // self.fishManager.addWanderingFishGroup(fishGroup: [fish1,fish2,fish3])
         
-        self.fishManager.addWanderingFishGroup(fishGroup: [fish1,fish2,fish3])
+        if let scene = SKScene(fileNamed: "background1"){
+            
+            //TOOD: Need to initialize the paths for the secene
+            self.fishManager.addPathFollowingFishGroup(fishGroup: [fish1,fish2,fish3])
+            
+            
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {

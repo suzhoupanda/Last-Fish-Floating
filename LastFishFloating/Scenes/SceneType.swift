@@ -10,6 +10,10 @@ import Foundation
 
 enum SceneType{
     case PlayersHuntsFleeingFish
+    case PlayersHuntFleeingFishThatAvoidObstacles
     case PlayersHuntsWanderingFish
+    case PlayersHuntWanderFishThatAvoidObstacles
     case BigFishHuntPlayer
+    case BigFishThatAvoidObstaclesHuntPlayer
+    case HuntingPredaorFleeingPreyAvoidingObstacle
 }

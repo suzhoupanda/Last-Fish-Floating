@@ -10,13 +10,16 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+
+
 class FishManager{
     
     unowned var baseScene: BaseScene
     
     var fleeingFishGroup: [Fish]?
-    
     var wanderingFishGroup: [Fish]?
+    var pathFollowingFishGroup: [Fish]?
+    var avoidingFish: [Fish]?
     
     var player: Player{
         return baseScene.player
@@ -40,6 +43,14 @@ class FishManager{
         
     }()
     
+    lazy var huntGoal: GKGoal = {
+        
+        let goal =GKGoal(toSeekAgent: self.player.agent)
+        
+        return goal
+        
+    }()
+    
     lazy var wanderingGoal: GKGoal = {
         
         let goal = GKGoal(toWander: 500.0)
@@ -48,8 +59,103 @@ class FishManager{
     
     let maxFleeingDistance: Float = 200.0
     
+    var paths: [GKPath]?
     
-    func addWanderingFishGroup(fishGroup: [Fish]){
+    var obstacles: [GKObstacle]?
+    
+    
+    
+ var pathGoal: GKGoal{
+        
+        guard let paths = self.paths else {
+            fatalError("Error: paths array was not initialized; first provide the necessary path information, then proceed to initialize the path goal")
+        }
+        
+        let count = paths.count
+        let idx = Int(arc4random_uniform(UInt32(count)))
+        let randomPath = paths[idx]
+        
+        let goal = GKGoal(toFollow: randomPath, maxPredictionTime: 1.5, forward: true)
+        
+        return goal
+    }
+    
+    var avoidObstaclesGoal: GKGoal?{
+    
+        guard let obstacles = baseScene.obstacles else { return nil }
+        
+        return GKGoal(toAvoid: obstacles, maxPredictionTime: 1.5)
+    }
+    
+    func addPaths(withPathConfigurations pathConfigurations: [PathConfiguration]){
+        
+        let gkPaths = pathConfigurations.map({
+            
+            return GKPath(points: $0.points, radius: $0.radius, cyclical: $0.isCyclical)
+        })
+        
+        self.paths = gkPaths
+    }
+    
+    func addPath(withPathConfiguration pathConfiguration: PathConfiguration){
+        
+        if paths == nil{
+            
+            paths = [GKPath]()
+            
+        } else {
+            
+            let newPath = GKPath(points: pathConfiguration.points, radius: pathConfiguration.radius, cyclical: pathConfiguration.isCyclical)
+            
+            paths!.append(newPath)
+            
+        }
+    }
+    
+    
+    func addPredatorFishGroup(fishGroup: [Fish], avoidsObstacles: Bool = false){
+        
+        self.pathFollowingFishGroup = fishGroup
+        
+        self.pathFollowingFishGroup?.forEach({
+            
+            fish in
+            
+            fish.agent.behavior = GKBehavior(goal: self.huntGoal, weight: 1.00)
+            
+            
+            if let avoidsObstaclesGoal = self.avoidObstaclesGoal, avoidsObstacles{
+                fish.agent.behavior = GKBehavior(goal: avoidsObstaclesGoal, weight: 1.0)
+            }
+            
+            baseScene.agentSystem.addComponent(fish.agent)
+            
+        })
+    }
+
+
+    
+    func addPathFollowingFishGroup(fishGroup: [Fish], avoidsObstacles: Bool = false){
+        
+        self.pathFollowingFishGroup = fishGroup
+        
+        self.pathFollowingFishGroup?.forEach({
+            
+            fish in
+            
+            fish.agent.behavior = GKBehavior(goal: self.pathGoal, weight: 1.00)
+            
+            
+            if let avoidsObstaclesGoal = self.avoidObstaclesGoal, avoidsObstacles{
+                fish.agent.behavior = GKBehavior(goal: avoidsObstaclesGoal, weight: 1.0)
+            }
+            
+            baseScene.agentSystem.addComponent(fish.agent)
+            
+        })
+    }
+    
+    func addWanderingFishGroup(fishGroup: [Fish], avoidsObstacles: Bool = false){
     
         self.wanderingFishGroup = fishGroup
         
@@ -57,19 +163,30 @@ class FishManager{
             fish in
             
             fish.agent.behavior = GKBehavior(goal: self.wanderingGoal, weight: 1.00)
+            
+            if let avoidsObstaclesGoal = self.avoidObstaclesGoal, avoidsObstacles{
+                fish.agent.behavior = GKBehavior(goal: avoidsObstaclesGoal, weight: 1.0)
+            }
+            
             baseScene.agentSystem.addComponent(fish.agent)
             
         })
     }
     
-    func addFleeingFishGroup(fishGroup: [Fish]){
+    func addFleeingFishGroup(fishGroup: [Fish], avoidsObstacles: Bool = false){
         
         self.fleeingFishGroup = fishGroup
         
         self.fleeingFishGroup!.forEach({
             fish in
             
+            
             fish.agent.behavior = GKBehavior(goals: [self.fleeGoal,self.stopGoal])
+            
+            if let avoidsObstaclesGoal = self.avoidObstaclesGoal, avoidsObstacles{
+                fish.agent.behavior = GKBehavior(goal: avoidsObstaclesGoal, weight: 1.0)
+            }
+            
             baseScene.agentSystem.addComponent(fish.agent)
         })
     }
