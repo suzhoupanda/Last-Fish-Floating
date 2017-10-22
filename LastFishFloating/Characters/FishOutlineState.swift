@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+enum FishOutlineState{
+    case Outlined, Unoutlined
+}

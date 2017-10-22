@@ -15,7 +15,26 @@ class AgentNode: SKSpriteNode, GKAgentDelegate{
     
     var agent: GKAgent2D!
     
+    var fishType: FishType = .BlueFish
+    
     var isActiveAgent: Bool = false
+    
+    var previousOrientation: FishOrientation?
+    
+    var orientation: FishOrientation?{
+        
+        didSet{
+            
+            if let previousOrientation = oldValue, let currentOrientation = orientation, previousOrientation != currentOrientation{
+                
+                let newTexture = self.fishType.getTexture(forOrientation: currentOrientation, andForOutlineState: .Unoutlined, isDead: false)
+                
+                run(SKAction.setTexture(newTexture))
+                
+            }
+            
+        }
+    }
     
     init(withScene scene: BaseScene,texture: SKTexture, radius: Float, position: CGPoint) {
         super.init(texture: texture, color: .clear, size: texture.size())
@@ -26,6 +45,7 @@ class AgentNode: SKSpriteNode, GKAgentDelegate{
         
         agent = GKAgent2D()
         agent.radius = radius
+        agent.rotation = Float(zRotation)
         agent.position = vector_float2(x: Float(position.x), y: Float(position.y))
         agent.delegate = self
         agent.maxSpeed = 100
@@ -42,6 +62,12 @@ class AgentNode: SKSpriteNode, GKAgentDelegate{
     }
     
     
+    func configureAgent(withMaxSpeed speed: Float, andWithMaxAccelerationOf acceleration: Float){
+        
+        self.agent.maxSpeed = speed
+        self.agent.maxAcceleration = acceleration
+        
+    }
     
     //MARK:     ****GKAgentDelegate Methods
     
@@ -57,6 +83,15 @@ class AgentNode: SKSpriteNode, GKAgentDelegate{
             
             let agentPosition = agent.position.getCGPoint()
             self.position = agentPosition
+            
+           
+            let adjustedRotation = agent.rotation.truncatingRemainder(dividingBy: Float.pi)
+            
+            print("agent orientation is \(adjustedRotation)")
+
+            self.orientation = ((adjustedRotation > Float.pi/4.00 && adjustedRotation < Float.pi*3.00/4.00) || (adjustedRotation < -Float.pi/4.00 && adjustedRotation > -Float.pi*3.00/4.00)) ? .Left : .Right
+                
+            
             
         } else {
             

@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import SpriteKit
+import UIKit
+
+class GameConstants{
+    static let ScreenSize = UIScreen.main.bounds.size
+    static let ScreenWidth = UIScreen.main.bounds.size.width
+    static let ScreenHeight = UIScreen.main.bounds.size.height
+    static let HalfScreenWidth = UIScreen.main.bounds.size.width/2.00
+    static let HalfScreenHeight = UIScreen.main.bounds.size.width/2.00
+
+}

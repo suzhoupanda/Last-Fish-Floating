@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD02C5A31F9C66AB009F6977 /* SceneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5A21F9C66AB009F6977 /* SceneType.swift */; };
+		BD02C5A51F9C6C38009F6977 /* FishManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5A41F9C6C38009F6977 /* FishManager.swift */; };
+		BD02C5A71F9C72D6009F6977 /* SceneLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5A61F9C72D6009F6977 /* SceneLoader.swift */; };
+		BD02C5A91F9C7303009F6977 /* BFHScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5A81F9C7303009F6977 /* BFHScene.swift */; };
+		BD02C5AB1F9C7316009F6977 /* PHSScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5AA1F9C7316009F6977 /* PHSScene.swift */; };
+		BD02C5AD1F9C73E6009F6977 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5AC1F9C73E6009F6977 /* GameConstants.swift */; };
 		BD3FED821F9B70E400910AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FED811F9B70E400910AF7 /* AppDelegate.swift */; };
-		BD3FED841F9B70E400910AF7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD3FED831F9B70E400910AF7 /* GameScene.sks */; };
 		BD3FED861F9B70E400910AF7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD3FED851F9B70E400910AF7 /* Actions.sks */; };
 		BD3FED881F9B70E400910AF7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FED871F9B70E400910AF7 /* GameScene.swift */; };
 		BD3FED8A1F9B70E400910AF7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FED891F9B70E400910AF7 /* GameViewController.swift */; };
@@ -17,6 +22,16 @@
 		BD3FED921F9B70E400910AF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3FED901F9B70E400910AF7 /* LaunchScreen.storyboard */; };
 		BD3FED9D1F9B70E400910AF7 /* LastFishFloatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FED9C1F9B70E400910AF7 /* LastFishFloatingTests.swift */; };
 		BD3FEDA81F9B70E400910AF7 /* LastFishFloatingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FEDA71F9B70E400910AF7 /* LastFishFloatingUITests.swift */; };
+		BD3FEDB71F9B723000910AF7 /* BaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FEDB61F9B723000910AF7 /* BaseScene.swift */; };
+		BD3FEDB91F9B72F000910AF7 /* AgentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FEDB81F9B72F000910AF7 /* AgentNode.swift */; };
+		BD3FEDBC1F9B732400910AF7 /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3FEDBB1F9B732400910AF7 /* GameplayKit.framework */; };
+		BD3FEDBE1F9B732B00910AF7 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3FEDBD1F9B732B00910AF7 /* SpriteKit.framework */; };
+		BD3FEDC11F9B73AF00910AF7 /* ConversionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FEDC01F9B73AF00910AF7 /* ConversionHelper.swift */; };
+		BD3FEDC41F9B74A300910AF7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FEDC31F9B74A300910AF7 /* Player.swift */; };
+		BD3FEDC61F9B74AE00910AF7 /* FIsh.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FEDC51F9B74AE00910AF7 /* FIsh.swift */; };
+		BD3FEDC81F9B74B500910AF7 /* FishType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FEDC71F9B74B500910AF7 /* FishType.swift */; };
+		BD3FEDCA1F9B751A00910AF7 /* FishOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FEDC91F9B751A00910AF7 /* FishOrientation.swift */; };
+		BD3FEDCC1F9B777600910AF7 /* FishOutlineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FEDCB1F9B777600910AF7 /* FishOutlineState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD02C5A21F9C66AB009F6977 /* SceneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneType.swift; sourceTree = "<group>"; };
+		BD02C5A41F9C6C38009F6977 /* FishManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishManager.swift; sourceTree = "<group>"; };
+		BD02C5A61F9C72D6009F6977 /* SceneLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLoader.swift; sourceTree = "<group>"; };
+		BD02C5A81F9C7303009F6977 /* BFHScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFHScene.swift; sourceTree = "<group>"; };
+		BD02C5AA1F9C7316009F6977 /* PHSScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHSScene.swift; sourceTree = "<group>"; };
+		BD02C5AC1F9C73E6009F6977 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
 		BD3FED7E1F9B70E400910AF7 /* LastFishFloating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastFishFloating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3FED811F9B70E400910AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BD3FED831F9B70E400910AF7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		BD3FED851F9B70E400910AF7 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		BD3FED871F9B70E400910AF7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		BD3FED891F9B70E400910AF7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +73,16 @@
 		BD3FEDA31F9B70E400910AF7 /* LastFishFloatingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LastFishFloatingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3FEDA71F9B70E400910AF7 /* LastFishFloatingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastFishFloatingUITests.swift; sourceTree = "<group>"; };
 		BD3FEDA91F9B70E400910AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD3FEDB61F9B723000910AF7 /* BaseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScene.swift; sourceTree = "<group>"; };
+		BD3FEDB81F9B72F000910AF7 /* AgentNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentNode.swift; sourceTree = "<group>"; };
+		BD3FEDBB1F9B732400910AF7 /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = System/Library/Frameworks/GameplayKit.framework; sourceTree = SDKROOT; };
+		BD3FEDBD1F9B732B00910AF7 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		BD3FEDC01F9B73AF00910AF7 /* ConversionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionHelper.swift; sourceTree = "<group>"; };
+		BD3FEDC31F9B74A300910AF7 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		BD3FEDC51F9B74AE00910AF7 /* FIsh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIsh.swift; sourceTree = "<group>"; };
+		BD3FEDC71F9B74B500910AF7 /* FishType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishType.swift; sourceTree = "<group>"; };
+		BD3FEDC91F9B751A00910AF7 /* FishOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishOrientation.swift; sourceTree = "<group>"; };
+		BD3FEDCB1F9B777600910AF7 /* FishOutlineState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishOutlineState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3FEDBE1F9B732B00910AF7 /* SpriteKit.framework in Frameworks */,
+				BD3FEDBC1F9B732400910AF7 /* GameplayKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +119,7 @@
 				BD3FED9B1F9B70E400910AF7 /* LastFishFloatingTests */,
 				BD3FEDA61F9B70E400910AF7 /* LastFishFloatingUITests */,
 				BD3FED7F1F9B70E400910AF7 /* Products */,
+				BD3FEDBA1F9B732400910AF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,8 +136,10 @@
 		BD3FED801F9B70E400910AF7 /* LastFishFloating */ = {
 			isa = PBXGroup;
 			children = (
+				BD3FEDC21F9B749900910AF7 /* Characters */,
+				BD3FEDBF1F9B739C00910AF7 /* GameUtil */,
+				BD3FEDB51F9B722500910AF7 /* Scenes */,
 				BD3FED811F9B70E400910AF7 /* AppDelegate.swift */,
-				BD3FED831F9B70E400910AF7 /* GameScene.sks */,
 				BD3FED851F9B70E400910AF7 /* Actions.sks */,
 				BD3FED871F9B70E400910AF7 /* GameScene.swift */,
 				BD3FED891F9B70E400910AF7 /* GameViewController.swift */,
@@ -132,6 +167,50 @@
 				BD3FEDA91F9B70E400910AF7 /* Info.plist */,
 			);
 			path = LastFishFloatingUITests;
+			sourceTree = "<group>";
+		};
+		BD3FEDB51F9B722500910AF7 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BD3FEDB61F9B723000910AF7 /* BaseScene.swift */,
+				BD02C5A21F9C66AB009F6977 /* SceneType.swift */,
+				BD02C5A61F9C72D6009F6977 /* SceneLoader.swift */,
+				BD02C5A81F9C7303009F6977 /* BFHScene.swift */,
+				BD02C5AA1F9C7316009F6977 /* PHSScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		BD3FEDBA1F9B732400910AF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD3FEDBD1F9B732B00910AF7 /* SpriteKit.framework */,
+				BD3FEDBB1F9B732400910AF7 /* GameplayKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD3FEDBF1F9B739C00910AF7 /* GameUtil */ = {
+			isa = PBXGroup;
+			children = (
+				BD3FEDC01F9B73AF00910AF7 /* ConversionHelper.swift */,
+				BD02C5AC1F9C73E6009F6977 /* GameConstants.swift */,
+			);
+			path = GameUtil;
+			sourceTree = "<group>";
+		};
+		BD3FEDC21F9B749900910AF7 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				BD3FEDB81F9B72F000910AF7 /* AgentNode.swift */,
+				BD3FEDC31F9B74A300910AF7 /* Player.swift */,
+				BD3FEDC51F9B74AE00910AF7 /* FIsh.swift */,
+				BD3FEDC71F9B74B500910AF7 /* FishType.swift */,
+				BD3FEDC91F9B751A00910AF7 /* FishOrientation.swift */,
+				BD3FEDCB1F9B777600910AF7 /* FishOutlineState.swift */,
+				BD02C5A41F9C6C38009F6977 /* FishManager.swift */,
+			);
+			path = Characters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +321,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD3FED8D1F9B70E400910AF7 /* Main.storyboard in Resources */,
-				BD3FED841F9B70E400910AF7 /* GameScene.sks in Resources */,
 				BD3FED8F1F9B70E400910AF7 /* Assets.xcassets in Resources */,
 				BD3FED921F9B70E400910AF7 /* LaunchScreen.storyboard in Resources */,
 				BD3FED861F9B70E400910AF7 /* Actions.sks in Resources */,
@@ -270,9 +348,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3FEDCA1F9B751A00910AF7 /* FishOrientation.swift in Sources */,
+				BD3FEDC81F9B74B500910AF7 /* FishType.swift in Sources */,
+				BD02C5AB1F9C7316009F6977 /* PHSScene.swift in Sources */,
 				BD3FED881F9B70E400910AF7 /* GameScene.swift in Sources */,
+				BD3FEDC11F9B73AF00910AF7 /* ConversionHelper.swift in Sources */,
 				BD3FED8A1F9B70E400910AF7 /* GameViewController.swift in Sources */,
+				BD3FEDCC1F9B777600910AF7 /* FishOutlineState.swift in Sources */,
+				BD02C5A51F9C6C38009F6977 /* FishManager.swift in Sources */,
+				BD02C5AD1F9C73E6009F6977 /* GameConstants.swift in Sources */,
+				BD02C5A31F9C66AB009F6977 /* SceneType.swift in Sources */,
+				BD02C5A91F9C7303009F6977 /* BFHScene.swift in Sources */,
+				BD3FEDB91F9B72F000910AF7 /* AgentNode.swift in Sources */,
+				BD02C5A71F9C72D6009F6977 /* SceneLoader.swift in Sources */,
+				BD3FEDC41F9B74A300910AF7 /* Player.swift in Sources */,
 				BD3FED821F9B70E400910AF7 /* AppDelegate.swift in Sources */,
+				BD3FEDB71F9B723000910AF7 /* BaseScene.swift in Sources */,
+				BD3FEDC61F9B74AE00910AF7 /* FIsh.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

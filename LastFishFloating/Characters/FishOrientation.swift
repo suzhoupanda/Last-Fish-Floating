@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+enum FishOrientation: String{
+    case Left
+    case Right
+}

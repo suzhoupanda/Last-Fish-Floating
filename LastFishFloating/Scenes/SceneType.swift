@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+enum SceneType{
+    case PlayersHuntsFleeingFish
+    case PlayersHuntsWanderingFish
+    case BigFishHuntPlayer
+}

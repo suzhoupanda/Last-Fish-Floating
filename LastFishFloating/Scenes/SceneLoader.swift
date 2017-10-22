@@ -7,3 +7,26 @@
 //
 
 import Foundation
+import SpriteKit
+import GameplayKit
+
+
+class SceneLoader{
+    
+    static func LoadScene(ofType sceneType: SceneType) -> BaseScene{
+        
+        switch sceneType {
+        case .BigFishHuntPlayer:
+            return BFHScene(size: GameConstants.ScreenSize)
+        case .PlayersHuntsFleeingFish:
+            return PHSScene(size: GameConstants.ScreenSize)
+        case .PlayersHuntsWanderingFish:
+            break
+        default:
+            return BaseScene(size: GameConstants.ScreenSize)
+        }
+        
+        return BaseScene(size: GameConstants.ScreenSize)
+
+    }
+}
