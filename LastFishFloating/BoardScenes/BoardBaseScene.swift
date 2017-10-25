@@ -26,6 +26,9 @@ class BoardBaseScene: SKScene{
     let overlayNode: SKNode!
     let graphNode: SKNode!
     
+    var boardTileMap: SKTileMapNode!
+    var gridGraph: GKGridGraph<GKGridGraphNode>!
+    
     /** The filename for the SKS file providing the background graphics, obstacle, path, and other information for the scene **/
     
     var sceneName: String{
@@ -60,11 +63,37 @@ class BoardBaseScene: SKScene{
         
         if let scene = SKScene(fileNamed: self.sceneName){
             
-            if let background = scene.childNode(withName: "GameBoard"){
+            
+            //let gridGraph = GKGridGraph<GKGridGraphNode>()
+        
+            var graphNodes = [GKGridGraphNode]()
+            
+            if let boardTileMap = scene.childNode(withName: "GameBoard") as? SKTileMapNode{
                 
-                background.move(toParent: backgroundNode)
+                self.boardTileMap = boardTileMap
+                self.boardTileMap.move(toParent: worldNode)
                 
-                //TODO: add the obstalce graph to the graph node based on the tile map node
+                for col in 0...boardTileMap.numberOfColumns{
+                    for row in 0...boardTileMap.numberOfRows{
+                    
+        
+                        if boardTileMap.tileDefinition(atColumn: col, row: row) != nil{
+                            
+                            
+                            let gridPosition = vector_int2(Int32(col), Int32(row))
+                            
+                            let graphNode = GKGridGraphNode(gridPosition: gridPosition)
+                    
+                            graphNodes.append(graphNode)
+                           // gridGraph.connectToAdjacentNodes(node: graphNode)
+                            
+                            
+                        }
+                        
+                    }
+                }
+                
+                self.gridGraph = GKGridGraph(nodes: graphNodes)
                 
             }
             
@@ -75,10 +104,45 @@ class BoardBaseScene: SKScene{
             
         }
         
+        let gridPos = vector_int2(x: Int32(5), y: Int32(1))
+        let boardPos = getBoardPositionForGridPosition(gridPosition: gridPos)
+        
+        let rect = CGRect(x: boardPos.x-boardTileMap.tileSize.width/2.00, y: boardPos.y+boardTileMap.tileSize.height/2.00, width: boardTileMap.tileSize.width, height: boardTileMap.tileSize.height)
+        let square = SKShapeNode(rect: rect)
+        square.strokeColor = UIColor.blue
+        square.fillColor = UIColor.orange
+        
+        square.move(toParent: worldNode)
+        
         let backgroundSound = SKAudioNode(fileNamed: "Polka Train.mp3")
         self.addChild(backgroundSound)
         
-  
+        
+        
+    }
+    
+    
+    
+    func getGridPositionForBoardPosition(boardPosition: CGPoint) -> vector_int2{
+        
+        let tileWidth = boardTileMap.tileSize.width
+        let tileHeight = boardTileMap.tileSize.height
+        
+        let gridCol = Int((boardPosition.x).truncatingRemainder(dividingBy: tileWidth))
+        let gridRow = Int((boardPosition.y).truncatingRemainder(dividingBy: tileHeight))
+        
+        return vector_int2(x: Int32(gridCol), y: Int32(gridRow))
+        
+    }
+    
+    func getBoardPositionForGridPosition(gridPosition: vector_int2)-> CGPoint{
+        
+        let col  = Int(gridPosition.x)
+        let row = Int(gridPosition.y)
+        
+        let centerPoint = self.boardTileMap.centerOfTile(atColumn: col, row: row)
+         
+        return centerPoint
         
     }
     
@@ -94,6 +158,11 @@ class BoardBaseScene: SKScene{
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
      
+        let touch = touches.first!
+        let touchPos = touch.location(in: self.worldNode)
+        
+        let gridPos = getGridPositionForBoardPosition(boardPosition: touchPos)
+        print("The corresponding grid position is: (x:\(gridPos.x), y:\(gridPos.y))")
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -118,6 +187,9 @@ class BoardBaseScene: SKScene{
         super.didSimulatePhysics()
       
     }
+    
+    
+
     
 }
 

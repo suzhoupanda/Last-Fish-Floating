@@ -25,8 +25,9 @@ class GameViewController: UIViewController {
                 if let view = self.view as! SKView? {
                     
                     let scene = SceneLoader.LoadScene(ofType: .PlayersHuntsFleeingFish)
-                
-                    view.presentScene(scene)
+                    let boardBaseScene = BoardBaseScene(size: CGSize(width: GameConstants.ScreenWidth*2.00, height: GameConstants.ScreenHeight*2.00))
+                    
+                    view.presentScene(boardBaseScene)
                     
                    
                 }
