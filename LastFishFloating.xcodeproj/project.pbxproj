@@ -13,6 +13,9 @@
 		BD02C5A91F9C7303009F6977 /* BFHScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5A81F9C7303009F6977 /* BFHScene.swift */; };
 		BD02C5AB1F9C7316009F6977 /* PHSScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5AA1F9C7316009F6977 /* PHSScene.swift */; };
 		BD02C5AD1F9C73E6009F6977 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5AC1F9C73E6009F6977 /* GameConstants.swift */; };
+		BD36853F1FA078B700CB4BFA /* boardBackground1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD36853E1FA078B700CB4BFA /* boardBackground1.sks */; };
+		BD3685411FA078C900CB4BFA /* BoardElements.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD3685401FA078C900CB4BFA /* BoardElements.sks */; };
+		BD3685461FA083B600CB4BFA /* BoardBaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3685451FA083B600CB4BFA /* BoardBaseScene.swift */; };
 		BD3BB03B1F9C917E00DCA40E /* background1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB03A1F9C917E00DCA40E /* background1.sks */; };
 		BD3BB0421F9C94C800DCA40E /* Night at the Beach.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB03F1F9C94BF00DCA40E /* Night at the Beach.mp3 */; };
 		BD3BB0431F9C94CC00DCA40E /* Polka Train.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB0401F9C94BF00DCA40E /* Polka Train.mp3 */; };
@@ -38,10 +41,17 @@
 		BD3FEDC81F9B74B500910AF7 /* FishType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FEDC71F9B74B500910AF7 /* FishType.swift */; };
 		BD3FEDCA1F9B751A00910AF7 /* FishOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FEDC91F9B751A00910AF7 /* FishOrientation.swift */; };
 		BD3FEDCC1F9B777600910AF7 /* FishOutlineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FEDCB1F9B777600910AF7 /* FishOutlineState.swift */; };
+		BD427EDD1F9DFDB800502FF7 /* bubbles1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD427EDB1F9DFDB800502FF7 /* bubbles1.sks */; };
+		BD427EDE1F9DFDB800502FF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD427EDC1F9DFDB800502FF7 /* Assets.xcassets */; };
 		BD4436961F9CA7D500D9D4D9 /* PathConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4436951F9CA7D500D9D4D9 /* PathConfiguration.swift */; };
 		BD4436981F9CB2B500D9D4D9 /* SKSceneReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4436971F9CB2B500D9D4D9 /* SKSceneReader.swift */; };
 		BD44369A1F9CB53400D9D4D9 /* Plan in Resources */ = {isa = PBXBuildFile; fileRef = BD4436991F9CB53400D9D4D9 /* Plan */; };
 		BD44369C1F9CB6C900D9D4D9 /* SKNode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD44369B1F9CB6C900D9D4D9 /* SKNode+Extension.swift */; };
+		BDA9162C1FA055E400B25CD0 /* ColliderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA9162B1FA055E400B25CD0 /* ColliderType.swift */; };
+		BDA9162F1FA056F600B25CD0 /* CollectibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA9162E1FA056F600B25CD0 /* CollectibleType.swift */; };
+		BDA916311FA0580300B25CD0 /* Collectible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA916301FA0580300B25CD0 /* Collectible.swift */; };
+		BDA916331FA0581900B25CD0 /* CollectibleSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA916321FA0581900B25CD0 /* CollectibleSprite.swift */; };
+		BDA916351FA0586E00B25CD0 /* CollectibleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA916341FA0586E00B25CD0 /* CollectibleManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +78,9 @@
 		BD02C5A81F9C7303009F6977 /* BFHScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFHScene.swift; sourceTree = "<group>"; };
 		BD02C5AA1F9C7316009F6977 /* PHSScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHSScene.swift; sourceTree = "<group>"; };
 		BD02C5AC1F9C73E6009F6977 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
+		BD36853E1FA078B700CB4BFA /* boardBackground1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = boardBackground1.sks; sourceTree = "<group>"; };
+		BD3685401FA078C900CB4BFA /* BoardElements.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BoardElements.sks; sourceTree = "<group>"; };
+		BD3685451FA083B600CB4BFA /* BoardBaseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardBaseScene.swift; sourceTree = "<group>"; };
 		BD3BB03A1F9C917E00DCA40E /* background1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = background1.sks; sourceTree = "<group>"; };
 		BD3BB03D1F9C94BF00DCA40E /* Space Cadet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Space Cadet.mp3"; sourceTree = "<group>"; };
 		BD3BB03E1F9C94BF00DCA40E /* Sad Town.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sad Town.mp3"; sourceTree = "<group>"; };
@@ -99,10 +112,17 @@
 		BD3FEDC71F9B74B500910AF7 /* FishType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishType.swift; sourceTree = "<group>"; };
 		BD3FEDC91F9B751A00910AF7 /* FishOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishOrientation.swift; sourceTree = "<group>"; };
 		BD3FEDCB1F9B777600910AF7 /* FishOutlineState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishOutlineState.swift; sourceTree = "<group>"; };
+		BD427EDB1F9DFDB800502FF7 /* bubbles1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bubbles1.sks; sourceTree = "<group>"; };
+		BD427EDC1F9DFDB800502FF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD4436951F9CA7D500D9D4D9 /* PathConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathConfiguration.swift; sourceTree = "<group>"; };
 		BD4436971F9CB2B500D9D4D9 /* SKSceneReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSceneReader.swift; sourceTree = "<group>"; };
 		BD4436991F9CB53400D9D4D9 /* Plan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Plan; sourceTree = "<group>"; };
 		BD44369B1F9CB6C900D9D4D9 /* SKNode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Extension.swift"; sourceTree = "<group>"; };
+		BDA9162B1FA055E400B25CD0 /* ColliderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColliderType.swift; sourceTree = "<group>"; };
+		BDA9162E1FA056F600B25CD0 /* CollectibleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleType.swift; sourceTree = "<group>"; };
+		BDA916301FA0580300B25CD0 /* Collectible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collectible.swift; sourceTree = "<group>"; };
+		BDA916321FA0581900B25CD0 /* CollectibleSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleSprite.swift; sourceTree = "<group>"; };
+		BDA916341FA0586E00B25CD0 /* CollectibleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,10 +152,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD3685421FA0837600CB4BFA /* BoardScenes */ = {
+			isa = PBXGroup;
+			children = (
+				BD3685451FA083B600CB4BFA /* BoardBaseScene.swift */,
+			);
+			path = BoardScenes;
+			sourceTree = "<group>";
+		};
 		BD3BB0391F9C916800DCA40E /* SKSFiles */ = {
 			isa = PBXGroup;
 			children = (
 				BD3BB03A1F9C917E00DCA40E /* background1.sks */,
+				BD427EDB1F9DFDB800502FF7 /* bubbles1.sks */,
+				BD427EDC1F9DFDB800502FF7 /* Assets.xcassets */,
+				BD36853E1FA078B700CB4BFA /* boardBackground1.sks */,
+				BD3685401FA078C900CB4BFA /* BoardElements.sks */,
 			);
 			path = SKSFiles;
 			sourceTree = "<group>";
@@ -183,6 +215,8 @@
 		BD3FED801F9B70E400910AF7 /* LastFishFloating */ = {
 			isa = PBXGroup;
 			children = (
+				BD3685421FA0837600CB4BFA /* BoardScenes */,
+				BDA9162D1FA056E600B25CD0 /* Collectibles */,
 				BD3BB0471F9C94D900DCA40E /* SoundEffects */,
 				BD3BB03C1F9C94AE00DCA40E /* BackgroundMusic */,
 				BD3BB0391F9C916800DCA40E /* SKSFiles */,
@@ -249,6 +283,7 @@
 				BD4436951F9CA7D500D9D4D9 /* PathConfiguration.swift */,
 				BD4436971F9CB2B500D9D4D9 /* SKSceneReader.swift */,
 				BD44369B1F9CB6C900D9D4D9 /* SKNode+Extension.swift */,
+				BDA9162B1FA055E400B25CD0 /* ColliderType.swift */,
 			);
 			path = GameUtil;
 			sourceTree = "<group>";
@@ -265,6 +300,17 @@
 				BD02C5A41F9C6C38009F6977 /* FishManager.swift */,
 			);
 			path = Characters;
+			sourceTree = "<group>";
+		};
+		BDA9162D1FA056E600B25CD0 /* Collectibles */ = {
+			isa = PBXGroup;
+			children = (
+				BDA9162E1FA056F600B25CD0 /* CollectibleType.swift */,
+				BDA916301FA0580300B25CD0 /* Collectible.swift */,
+				BDA916321FA0581900B25CD0 /* CollectibleSprite.swift */,
+				BDA916341FA0586E00B25CD0 /* CollectibleManager.swift */,
+			);
+			path = Collectibles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,13 +423,17 @@
 				BD3BB0431F9C94CC00DCA40E /* Polka Train.mp3 in Resources */,
 				BD3BB03B1F9C917E00DCA40E /* background1.sks in Resources */,
 				BD3BB0421F9C94C800DCA40E /* Night at the Beach.mp3 in Resources */,
+				BD427EDD1F9DFDB800502FF7 /* bubbles1.sks in Resources */,
 				BD3BB0441F9C94CE00DCA40E /* Sad Descent.mp3 in Resources */,
 				BD3FED8D1F9B70E400910AF7 /* Main.storyboard in Resources */,
+				BD427EDE1F9DFDB800502FF7 /* Assets.xcassets in Resources */,
 				BD3FED8F1F9B70E400910AF7 /* Assets.xcassets in Resources */,
 				BD3BB0451F9C94D100DCA40E /* Sad Town.mp3 in Resources */,
+				BD3685411FA078C900CB4BFA /* BoardElements.sks in Resources */,
 				BD3FED921F9B70E400910AF7 /* LaunchScreen.storyboard in Resources */,
 				BD44369A1F9CB53400D9D4D9 /* Plan in Resources */,
 				BD3BB0461F9C94D300DCA40E /* Space Cadet.mp3 in Resources */,
+				BD36853F1FA078B700CB4BFA /* boardBackground1.sks in Resources */,
 				BD3FED861F9B70E400910AF7 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,22 +462,28 @@
 				BD3FEDCA1F9B751A00910AF7 /* FishOrientation.swift in Sources */,
 				BD4436961F9CA7D500D9D4D9 /* PathConfiguration.swift in Sources */,
 				BD3FEDC81F9B74B500910AF7 /* FishType.swift in Sources */,
+				BDA916331FA0581900B25CD0 /* CollectibleSprite.swift in Sources */,
 				BD02C5AB1F9C7316009F6977 /* PHSScene.swift in Sources */,
 				BD3FED881F9B70E400910AF7 /* GameScene.swift in Sources */,
 				BD3FEDC11F9B73AF00910AF7 /* ConversionHelper.swift in Sources */,
 				BD3FED8A1F9B70E400910AF7 /* GameViewController.swift in Sources */,
+				BD3685461FA083B600CB4BFA /* BoardBaseScene.swift in Sources */,
+				BDA916351FA0586E00B25CD0 /* CollectibleManager.swift in Sources */,
+				BDA9162C1FA055E400B25CD0 /* ColliderType.swift in Sources */,
 				BD4436981F9CB2B500D9D4D9 /* SKSceneReader.swift in Sources */,
 				BD3FEDCC1F9B777600910AF7 /* FishOutlineState.swift in Sources */,
 				BD02C5A51F9C6C38009F6977 /* FishManager.swift in Sources */,
 				BD02C5AD1F9C73E6009F6977 /* GameConstants.swift in Sources */,
 				BD02C5A31F9C66AB009F6977 /* SceneType.swift in Sources */,
 				BD02C5A91F9C7303009F6977 /* BFHScene.swift in Sources */,
+				BDA916311FA0580300B25CD0 /* Collectible.swift in Sources */,
 				BD3FEDB91F9B72F000910AF7 /* AgentNode.swift in Sources */,
 				BD02C5A71F9C72D6009F6977 /* SceneLoader.swift in Sources */,
 				BD3FEDC41F9B74A300910AF7 /* Player.swift in Sources */,
 				BD3FED821F9B70E400910AF7 /* AppDelegate.swift in Sources */,
 				BD44369C1F9CB6C900D9D4D9 /* SKNode+Extension.swift in Sources */,
 				BD3FEDB71F9B723000910AF7 /* BaseScene.swift in Sources */,
+				BDA9162F1FA056F600B25CD0 /* CollectibleType.swift in Sources */,
 				BD3FEDC61F9B74AE00910AF7 /* FIsh.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

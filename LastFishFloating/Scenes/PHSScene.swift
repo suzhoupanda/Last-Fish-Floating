@@ -20,14 +20,6 @@ class PHSScene: BaseScene{
         super.didMove(to: view)
         
         
-        if let background = SKScene(fileNamed: "background1")?.childNode(withName: "Root"){
-            background.move(toParent: backgroundNode)
-        }
-        
-       
-        
-        let backgroundSound = SKAudioNode(fileNamed: "Polka Train.mp3")
-        self.addChild(backgroundSound)
         
         let fish1 = Fish(baseScene: self, fishType: .OrangeFish, position: CGPoint(x: 100, y: 100), radius: 40.0)
         fish1.configureAgent(withMaxSpeed: 20, andWithMaxAccelerationOf: 40)
@@ -40,12 +32,17 @@ class PHSScene: BaseScene{
 
         
         self.fishManager = FishManager(baseScene: self)
-       // self.fishManager.addWanderingFishGroup(fishGroup: [fish1,fish2,fish3])
+        
+        //self.fishManager.addPathFollowingFishGroup(fishGroup: [fish1,fish2,fish3], avoidsObstacles: false)
+        
+        self.fishManager.addPlayerHuntingFishGroup(fishGroup: [fish1,fish2,fish3], avoidsObstacles: true)
+        
+       // self.fishManager.addFlockingPredatorFish(fishGroup: self.flockFish!)
         
         if let scene = SKScene(fileNamed: "background1"){
             
             //TOOD: Need to initialize the paths for the secene
-            self.fishManager.addPathFollowingFishGroup(fishGroup: [fish1,fish2,fish3])
+            //self.fishManager.addPathFollowingFishGroup(fishGroup: [fish1,fish2,fish3])
             
             
         }

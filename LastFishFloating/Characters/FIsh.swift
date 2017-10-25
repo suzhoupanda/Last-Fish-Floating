@@ -15,7 +15,10 @@ class Fish: AgentNode{
     
     var isDead: Bool = false
     
-   
+    var colliderType: ColliderType{
+        return self.fishType.getColliderType()
+    }
+    
     convenience init(baseScene: BaseScene, fishType: FishType, position: CGPoint, radius: Float) {
         
         
@@ -23,8 +26,8 @@ class Fish: AgentNode{
         
         self.init(withScene: baseScene, texture: defaultTexture, radius: radius, position: position)
         
-        configurePhysicsProperties(withTexture: defaultTexture)
         self.fishType = fishType
+        configurePhysicsProperties(withTexture: defaultTexture)
 
         
     }
@@ -43,11 +46,12 @@ class Fish: AgentNode{
     func configurePhysicsProperties(withTexture texture: SKTexture){
         
         physicsBody = SKPhysicsBody(texture: texture, size: texture.size())
+        
         physicsBody?.affectedByGravity = false
         physicsBody?.allowsRotation = false
-        physicsBody?.categoryBitMask = 0
-        physicsBody?.collisionBitMask = 0
-        physicsBody?.contactTestBitMask = 0
+        physicsBody?.categoryBitMask = self.colliderType.categoryMask
+        physicsBody?.collisionBitMask = self.colliderType.collisionMask
+        physicsBody?.contactTestBitMask = self.colliderType.contactMask
     }
     
  

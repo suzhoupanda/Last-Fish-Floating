@@ -15,10 +15,11 @@ class AgentNode: SKSpriteNode, GKAgentDelegate{
     
     var agent: GKAgent2D!
     
-    var fishType: FishType = .BlueFish
     
     var isActiveAgent: Bool = false
     
+    var fishType: FishType = .BlueFish
+
     var previousOrientation: FishOrientation?
     
     var orientation: FishOrientation?{
@@ -84,13 +85,8 @@ class AgentNode: SKSpriteNode, GKAgentDelegate{
             let agentPosition = agent.position.getCGPoint()
             self.position = agentPosition
             
-           
-            let adjustedRotation = agent.rotation.truncatingRemainder(dividingBy: Float.pi)
-            
-            print("agent orientation is \(adjustedRotation)")
-
-            self.orientation = ((adjustedRotation > Float.pi/4.00 && adjustedRotation < Float.pi*3.00/4.00) || (adjustedRotation < -Float.pi/4.00 && adjustedRotation > -Float.pi*3.00/4.00)) ? .Left : .Right
-                
+            let agentVelocity = agent.velocity.x
+            self.orientation = agentVelocity < 0.00 ? .Left : .Right
             
             
         } else {

@@ -12,6 +12,11 @@ import GameplayKit
 
 class SKSceneReader{
     
+    static func loadObstacles(forBaseScene baseScene: inout BaseScene){
+        
+        
+    }
+    
     static func getObstacles(fromScene scene: SKScene){
         
         if let obstaclesNode = scene.childNode(withName: "obstacles") as? SKNode{

@@ -8,9 +8,25 @@
 
 import Foundation
 import SpriteKit
-enum FishType{
+
+/**
+ 
+     Information about predator-prey relationships can be found in the FishType enum.  The pink fish can serve as prey for any fish, while the opposite if true of the eel, which is a predator for all fish.  Blowfish are general-purpose obstalces and cause damage to an fish which contacts them. They are neither predator nor prey for any fish.
+ 
+         Other Predator-Prey relationships are as below:
+ 
+         OrangeFish hunts   BlueFish
+         BlueFish   hunts   Redfish
+         RedFish    hunts   OrangeFish
+ 
+         OrangeFish     is hunted by    RedFish
+         RedFish        is hunted by    BlueFish
+         BlueFish       is hunted by    OrangeFish
+ **/
+
+enum FishType: Int{
     
-    case RedFish, BlueFish, OrangeFish, Eel, BlowFish
+    case RedFish, BlueFish, OrangeFish, PinkFish, Eel, BlowFish
 
     func getBasicTexture(forFishType fishType: FishType) -> SKTexture{
         switch self {
@@ -22,6 +38,8 @@ enum FishType{
                 return SKTexture(imageNamed: "BlueFish_Right")
             case .Eel:
                 return SKTexture(imageNamed: "Eel_Right")
+            case .PinkFish:
+                return SKTexture(imageNamed: "PinkFish_Right")
             case .OrangeFish:
                 return SKTexture(imageNamed: "OrangeFish_Right")
             }
@@ -70,6 +88,64 @@ enum FishType{
             return isDead ?  SKTexture(imageNamed: "BlowFish_Outline_Dead_Right") :  SKTexture(imageNamed: "BlowFish_Outline_Right")
         case (.BlowFish, .Right, .Unoutlined):
             return isDead ?  SKTexture(imageNamed: "BlowFish_Dead_Right") :  SKTexture(imageNamed: "BlowFish_Right")
+            
+        case (.PinkFish, .Left, .Outlined):
+            return isDead ?  SKTexture(imageNamed: "PinkFish_Outline_Dead_Left") :  SKTexture(imageNamed: "PinkFish_Outline_Left")
+        case (.PinkFish, .Left, .Unoutlined):
+            return isDead ?  SKTexture(imageNamed: "PinkFish_Dead_Left") :  SKTexture(imageNamed: "PinkFish_Left")
+        case (.PinkFish, .Right, .Outlined):
+            return isDead ?  SKTexture(imageNamed: "PinkFish_Outline_Dead_Right") :  SKTexture(imageNamed: "PinkFish_Outline_Right")
+        case (.PinkFish, .Right, .Unoutlined):
+            return isDead ?  SKTexture(imageNamed: "PinkFish_Dead_Right") :  SKTexture(imageNamed: "PinkFish_Right")
+        }
+    }
+    
+    func getPredator() -> FishType{
+        switch self {
+        case .OrangeFish:
+            return .RedFish
+        case .RedFish:
+            return .BlueFish
+        case .BlueFish:
+            return .OrangeFish
+        default:
+            break
+            
+        }
+        
+        return .Eel
+    }
+    
+    func getPrey() -> FishType{
+        switch self {
+        case .OrangeFish:
+            return .BlueFish
+        case .RedFish:
+            return .OrangeFish
+        case .BlueFish:
+            return .RedFish
+        default:
+            break
+            
+        }
+        
+        return .PinkFish
+    }
+    
+    func getColliderType() -> ColliderType{
+        switch self {
+        case .BlowFish:
+            return ColliderType.BlowFish
+        case .BlueFish:
+            return ColliderType.BlueFish
+        case .RedFish:
+            return ColliderType.RedFish
+        case .OrangeFish:
+            return ColliderType.OrangeFish
+        case .PinkFish:
+            return ColliderType.PinkFish
+        case .Eel:
+            return ColliderType.Eel
         }
     }
 }

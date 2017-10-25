@@ -7,10 +7,12 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "OrangeFish_Right@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "OrangeFish_Right@3x.png",
       "scale" : "3x"
     }
   ],

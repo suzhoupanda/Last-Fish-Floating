@@ -1,4 +1,11 @@
 
+player must eat all prey - eating one prey spouts 2 more predators
+player must avoid predators and obstacles and get to the the finish point
+player must collect a certain number of objects falling from the surface or lying on the ground
+
+
+minmax strategist - fish game board
+
 Convert a series of nested nodes into a doubly linked list or list
 Use binary trees and different node traversal (inorder, preorder, and postorder) to get different paths along the tree
 
