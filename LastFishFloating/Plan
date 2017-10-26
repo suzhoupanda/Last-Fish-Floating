@@ -1,4 +1,10 @@
 
+Game 1 - Pinky Fish - Pacman-Style Game
+
+little pink fish avoids predators
+
+Game 2 - Agent-Goal Behavior
+
 player must eat all prey - eating one prey spouts 2 more predators
 player must avoid predators and obstacles and get to the the finish point
 player must collect a certain number of objects falling from the surface or lying on the ground
@@ -13,3 +19,5 @@ create gambling scenario - bet on fish - based on rules - orange fish hunt pink 
 
     -weights for avoid predator/chasing prey
     -speed at which prey are chased
+
+Game 3 - MinMax Strategist Game

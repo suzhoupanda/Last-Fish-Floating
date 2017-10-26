@@ -15,6 +15,7 @@ class AgentNode: SKSpriteNode, GKAgentDelegate{
     
     var agent: GKAgent2D!
     
+    var baseScene: BaseScene!
     
     var isActiveAgent: Bool = false
     
@@ -40,6 +41,7 @@ class AgentNode: SKSpriteNode, GKAgentDelegate{
     init(withScene scene: BaseScene,texture: SKTexture, radius: Float, position: CGPoint) {
         super.init(texture: texture, color: .clear, size: texture.size())
         
+        self.baseScene = scene
         self.position = position
         self.zPosition = 10
         scene.worldNode.addChild(self)

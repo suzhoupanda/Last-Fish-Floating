@@ -52,6 +52,9 @@
 		BDA916311FA0580300B25CD0 /* Collectible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA916301FA0580300B25CD0 /* Collectible.swift */; };
 		BDA916331FA0581900B25CD0 /* CollectibleSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA916321FA0581900B25CD0 /* CollectibleSprite.swift */; };
 		BDA916351FA0586E00B25CD0 /* CollectibleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA916341FA0586E00B25CD0 /* CollectibleManager.swift */; };
+		BDF3F7B71FA18025009E22EC /* DynamicFish.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3F7B61FA18025009E22EC /* DynamicFish.swift */; };
+		BDF3F7B91FA1802E009E22EC /* DynamicFishManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3F7B81FA1802E009E22EC /* DynamicFishManager.swift */; };
+		BDF3F7BB1FA18F8A009E22EC /* DFSceneA.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF3F7BA1FA18F8A009E22EC /* DFSceneA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,9 @@
 		BDA916301FA0580300B25CD0 /* Collectible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collectible.swift; sourceTree = "<group>"; };
 		BDA916321FA0581900B25CD0 /* CollectibleSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleSprite.swift; sourceTree = "<group>"; };
 		BDA916341FA0586E00B25CD0 /* CollectibleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleManager.swift; sourceTree = "<group>"; };
+		BDF3F7B61FA18025009E22EC /* DynamicFish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFish.swift; sourceTree = "<group>"; };
+		BDF3F7B81FA1802E009E22EC /* DynamicFishManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFishManager.swift; sourceTree = "<group>"; };
+		BDF3F7BA1FA18F8A009E22EC /* DFSceneA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFSceneA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +221,7 @@
 		BD3FED801F9B70E400910AF7 /* LastFishFloating */ = {
 			isa = PBXGroup;
 			children = (
+				BDF3F7B51FA18013009E22EC /* AlternativeCharacters */,
 				BD3685421FA0837600CB4BFA /* BoardScenes */,
 				BDA9162D1FA056E600B25CD0 /* Collectibles */,
 				BD3BB0471F9C94D900DCA40E /* SoundEffects */,
@@ -311,6 +318,16 @@
 				BDA916341FA0586E00B25CD0 /* CollectibleManager.swift */,
 			);
 			path = Collectibles;
+			sourceTree = "<group>";
+		};
+		BDF3F7B51FA18013009E22EC /* AlternativeCharacters */ = {
+			isa = PBXGroup;
+			children = (
+				BDF3F7B61FA18025009E22EC /* DynamicFish.swift */,
+				BDF3F7B81FA1802E009E22EC /* DynamicFishManager.swift */,
+				BDF3F7BA1FA18F8A009E22EC /* DFSceneA.swift */,
+			);
+			path = AlternativeCharacters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,6 +484,7 @@
 				BD3FED881F9B70E400910AF7 /* GameScene.swift in Sources */,
 				BD3FEDC11F9B73AF00910AF7 /* ConversionHelper.swift in Sources */,
 				BD3FED8A1F9B70E400910AF7 /* GameViewController.swift in Sources */,
+				BDF3F7B71FA18025009E22EC /* DynamicFish.swift in Sources */,
 				BD3685461FA083B600CB4BFA /* BoardBaseScene.swift in Sources */,
 				BDA916351FA0586E00B25CD0 /* CollectibleManager.swift in Sources */,
 				BDA9162C1FA055E400B25CD0 /* ColliderType.swift in Sources */,
@@ -475,7 +493,9 @@
 				BD02C5A51F9C6C38009F6977 /* FishManager.swift in Sources */,
 				BD02C5AD1F9C73E6009F6977 /* GameConstants.swift in Sources */,
 				BD02C5A31F9C66AB009F6977 /* SceneType.swift in Sources */,
+				BDF3F7B91FA1802E009E22EC /* DynamicFishManager.swift in Sources */,
 				BD02C5A91F9C7303009F6977 /* BFHScene.swift in Sources */,
+				BDF3F7BB1FA18F8A009E22EC /* DFSceneA.swift in Sources */,
 				BDA916311FA0580300B25CD0 /* Collectible.swift in Sources */,
 				BD3FEDB91F9B72F000910AF7 /* AgentNode.swift in Sources */,
 				BD02C5A71F9C72D6009F6977 /* SceneLoader.swift in Sources */,
