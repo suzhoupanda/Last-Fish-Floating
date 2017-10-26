@@ -13,6 +13,8 @@
 		BD02C5A91F9C7303009F6977 /* BFHScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5A81F9C7303009F6977 /* BFHScene.swift */; };
 		BD02C5AB1F9C7316009F6977 /* PHSScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5AA1F9C7316009F6977 /* PHSScene.swift */; };
 		BD02C5AD1F9C73E6009F6977 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02C5AC1F9C73E6009F6977 /* GameConstants.swift */; };
+		BD2ACD111FA1DFB100059C35 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2ACD101FA1DFB100059C35 /* Rules.swift */; };
+		BD356F5A1FA1AF9E0067FA79 /* FishSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD356F591FA1AF9E0067FA79 /* FishSnapshot.swift */; };
 		BD36853F1FA078B700CB4BFA /* boardBackground1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD36853E1FA078B700CB4BFA /* boardBackground1.sks */; };
 		BD3685411FA078C900CB4BFA /* BoardElements.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD3685401FA078C900CB4BFA /* BoardElements.sks */; };
 		BD3685461FA083B600CB4BFA /* BoardBaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3685451FA083B600CB4BFA /* BoardBaseScene.swift */; };
@@ -81,6 +83,8 @@
 		BD02C5A81F9C7303009F6977 /* BFHScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFHScene.swift; sourceTree = "<group>"; };
 		BD02C5AA1F9C7316009F6977 /* PHSScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHSScene.swift; sourceTree = "<group>"; };
 		BD02C5AC1F9C73E6009F6977 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
+		BD2ACD101FA1DFB100059C35 /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
+		BD356F591FA1AF9E0067FA79 /* FishSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishSnapshot.swift; sourceTree = "<group>"; };
 		BD36853E1FA078B700CB4BFA /* boardBackground1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = boardBackground1.sks; sourceTree = "<group>"; };
 		BD3685401FA078C900CB4BFA /* BoardElements.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BoardElements.sks; sourceTree = "<group>"; };
 		BD3685451FA083B600CB4BFA /* BoardBaseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardBaseScene.swift; sourceTree = "<group>"; };
@@ -326,6 +330,8 @@
 				BDF3F7B61FA18025009E22EC /* DynamicFish.swift */,
 				BDF3F7B81FA1802E009E22EC /* DynamicFishManager.swift */,
 				BDF3F7BA1FA18F8A009E22EC /* DFSceneA.swift */,
+				BD356F591FA1AF9E0067FA79 /* FishSnapshot.swift */,
+				BD2ACD101FA1DFB100059C35 /* Rules.swift */,
 			);
 			path = AlternativeCharacters;
 			sourceTree = "<group>";
@@ -483,6 +489,7 @@
 				BD02C5AB1F9C7316009F6977 /* PHSScene.swift in Sources */,
 				BD3FED881F9B70E400910AF7 /* GameScene.swift in Sources */,
 				BD3FEDC11F9B73AF00910AF7 /* ConversionHelper.swift in Sources */,
+				BD356F5A1FA1AF9E0067FA79 /* FishSnapshot.swift in Sources */,
 				BD3FED8A1F9B70E400910AF7 /* GameViewController.swift in Sources */,
 				BDF3F7B71FA18025009E22EC /* DynamicFish.swift in Sources */,
 				BD3685461FA083B600CB4BFA /* BoardBaseScene.swift in Sources */,
@@ -493,6 +500,7 @@
 				BD02C5A51F9C6C38009F6977 /* FishManager.swift in Sources */,
 				BD02C5AD1F9C73E6009F6977 /* GameConstants.swift in Sources */,
 				BD02C5A31F9C66AB009F6977 /* SceneType.swift in Sources */,
+				BD2ACD111FA1DFB100059C35 /* Rules.swift in Sources */,
 				BDF3F7B91FA1802E009E22EC /* DynamicFishManager.swift in Sources */,
 				BD02C5A91F9C7303009F6977 /* BFHScene.swift in Sources */,
 				BDF3F7BB1FA18F8A009E22EC /* DFSceneA.swift in Sources */,

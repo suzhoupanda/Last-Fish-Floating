@@ -28,6 +28,10 @@ enum FishType: Int{
     
     case RedFish, BlueFish, OrangeFish, PinkFish, Eel, BlowFish
 
+    static let allPlayerTypes: [FishType] = [.OrangeFish,.RedFish,.BlueFish]
+    
+    static let allFishTypes: [FishType] = [.OrangeFish,.RedFish,.BlueFish, .PinkFish,.Eel]
+    
     func getBasicTexture(forFishType fishType: FishType) -> SKTexture{
         switch self {
             case .RedFish:

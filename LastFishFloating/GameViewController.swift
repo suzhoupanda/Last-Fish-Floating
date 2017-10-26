@@ -27,7 +27,7 @@ class GameViewController: UIViewController {
                     let scene = SceneLoader.LoadScene(ofType: .PlayersHuntsFleeingFish)
                     let boardBaseScene = BoardBaseScene(size: CGSize(width: GameConstants.ScreenWidth, height: GameConstants.ScreenHeight))
                     
-                    let dfSceneA = DFSceneA(size: GameConstants.ScreenSize)
+                    let dfSceneA = DynamicFishBaseScene(size: GameConstants.ScreenSize)
                     
                     view.presentScene(dfSceneA)
                     

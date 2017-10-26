@@ -11,9 +11,11 @@ import SpriteKit
 import GameplayKit
 
 
-class DFSceneA: BaseScene{
+class DynamicFishBaseScene: BaseScene{
     
     var dynamicFishManager: DynamicFishManager!
+    
+    var levelSnapshot: LevelSnapshot?
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -26,6 +28,9 @@ class DFSceneA: BaseScene{
         super.update(currentTime)
         
         self.dynamicFishManager.update(currentTime: currentTime)
+        
+        
+   
         
     }
     

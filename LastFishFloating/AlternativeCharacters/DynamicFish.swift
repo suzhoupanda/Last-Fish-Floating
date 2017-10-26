@@ -167,7 +167,7 @@ class DynamicFish: AgentNode{
     func update(currentTime: TimeInterval){
         
         print("Update the current fish...")
-        
+    
         self.ruleSystem.state["distanceToPlayer"] = NSNumber(value: self.distanceToPlayer)
         
         self.ruleSystem.reset()
