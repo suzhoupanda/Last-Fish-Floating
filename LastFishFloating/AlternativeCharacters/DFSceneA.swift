@@ -15,13 +15,15 @@ class DynamicFishBaseScene: BaseScene{
     
     var dynamicFishManager: DynamicFishManager!
     
-    var levelSnapshot: LevelSnapshot?
-    
+
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
         dynamicFishManager = DynamicFishManager(baseScene: self)
         dynamicFishManager.addRedFish()
+        dynamicFishManager.addBlueFish()
+        dynamicFishManager.addOrangeFish()
+        
     }
     
     override func update(_ currentTime: TimeInterval) {

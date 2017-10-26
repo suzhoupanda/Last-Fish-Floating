@@ -8,7 +8,7 @@
 
 
 
-
+/**
 import GameplayKit
 
 enum Fact: String {
@@ -199,3 +199,5 @@ class GoodTaskBotFarRule: FuzzyDynamicFishRule {
     
     init() { super.init(fact: .goodTaskBotFar) }
 }
+ 
+ **/

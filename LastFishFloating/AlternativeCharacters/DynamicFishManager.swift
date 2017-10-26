@@ -141,6 +141,36 @@ class DynamicFishManager{
     }
     
     
+    func addBlueFish(){
+        
+        if(_blueFish == nil){
+            _blueFish = [DynamicFish]()
+        }
+        
+        let spawnPos = CGPoint(x: -100.0, y: 100.0)
+        
+        let aBlueFish = DynamicFish(baseScene: self.baseScene, fishType: .BlueFish, position: spawnPos, radius: 10.0)
+        
+        
+        _blueFish!.append(aBlueFish)
+        
+    }
+    
+    func addOrangeFish(){
+        
+        if(_orangeFish == nil){
+            _orangeFish = [DynamicFish]()
+        }
+        
+        let spawnPos = CGPoint(x: -100.0, y: -100.0)
+        
+        let anOrangeFish = DynamicFish(baseScene: self.baseScene, fishType: .OrangeFish, position: spawnPos, radius: 10.0)
+        
+        
+        _orangeFish!.append(anOrangeFish)
+        
+    }
+    
     func addRedFish(){
         
         if(_redFish == nil){

@@ -38,6 +38,8 @@ class DynamicFish: AgentNode{
         case ReachVelocity(Float)
         case FollowPath(GKPath,TimeInterval,Bool)
         case Stop
+        case CohereWithPlayer(Player)
+        case AlignWithPlayer(Player)
         
         
         var FishGoal: GKGoal{
@@ -59,13 +61,27 @@ class DynamicFish: AgentNode{
                 return GKGoal(toAvoid: agents, maxPredictionTime: predictionTime)
             case .FollowPath(let path,let predictionTime, let isCyclical):
                 return GKGoal(toFollow: path, maxPredictionTime: predictionTime, forward: isCyclical)
-                
+            case .CohereWithPlayer(let player):
+                return GKGoal(toCohereWith: [player.agent], maxDistance: 100.0, maxAngle: 2.0*Float.pi)
+            case .AlignWithPlayer(let player):
+                return GKGoal(toAlignWith: [player.agent], maxDistance: 100.0, maxAngle: 2.0*Float.pi)
             }
         }
         
     }
     
     var _huntPlayerFact: AssertedFact?
+    var _fleePlayerFact: AssertedFact?
+    var _cohereWithPlayerFact: AssertedFact?
+    
+    
+    var cohereWithPlayerFact: AssertedFact{
+        if(_cohereWithPlayerFact == nil){
+            _cohereWithPlayerFact = AssertedFact(name: "cohereWithPlayer")
+        }
+        
+        return _cohereWithPlayerFact!
+    }
     
     var huntPlayerFact: AssertedFact{
         
@@ -74,6 +90,15 @@ class DynamicFish: AgentNode{
         }
         
         return _huntPlayerFact!
+    }
+    
+    var fleePlayerFact: AssertedFact{
+        
+        if(_fleePlayerFact == nil){
+            _fleePlayerFact = AssertedFact(name: "fleePlayer")
+        }
+        
+        return _fleePlayerFact!
     }
     
     
@@ -148,50 +173,77 @@ class DynamicFish: AgentNode{
         
         self.ruleSystem = GKRuleSystem()
     
+        if(self.fishType.getPrey() == self.player.fishType){
+            
+            let playerFarPredicate = NSPredicate(format: "$distanceToPlayer.doubleValue <= 200.0")
+            
+            let playerFarRule = GKRule(predicate: playerFarPredicate, assertingFact:self.huntPlayerFact, grade: 1.00)
+            
+            ruleSystem.add(playerFarRule)
+            
+            let playerNearPredicate = NSPredicate(format: "$distanceToPlayer.doubleValue >= 200.0")
+            
+            let playerNearRule = GKRule(predicate: playerNearPredicate, retractingFact: self.huntPlayerFact, grade: 1.00)
+            
+            ruleSystem.add(playerNearRule)
+            
+        } else if (self.fishType.getPredator() == self.player.fishType){
+            
+            let playerFarPredicate = NSPredicate(format: "$distanceToPlayer.doubleValue >= 100.0")
+            
+            let playerFarRule = GKRule(predicate: playerFarPredicate, retractingFact:self.fleePlayerFact, grade: 1.00)
+            
+            ruleSystem.add(playerFarRule)
+            
+            let playerNearPredicate = NSPredicate(format: "$distanceToPlayer.doubleValue <= 100.0")
+            
+            let playerNearRule = GKRule(predicate: playerNearPredicate, assertingFact: self.fleePlayerFact, grade: 1.00)
+            
+            ruleSystem.add(playerNearRule)
+        } else if(self.fishType == self.player.fishType){
+            
+          
         
-        let playerFarPredicate = NSPredicate(format: "$distanceToPlayer.doubleValue <= 200.0")
+            let playerFarPredicate = NSPredicate(format: "$distanceToPlayer.doubleValue >= 100.0")
+            
+            let playerFarRule = GKRule(predicate: playerFarPredicate, retractingFact:self.cohereWithPlayerFact, grade: 1.00)
+            
+            ruleSystem.add(playerFarRule)
+            
+            let playerNearPredicate = NSPredicate(format: "$distanceToPlayer.doubleValue <= 100.0")
+            
+            let playerNearRule = GKRule(predicate: playerNearPredicate, assertingFact: self.cohereWithPlayerFact, grade: 1.00)
+            
+            ruleSystem.add(playerNearRule)
+            
+        }
         
-        let playerFarRule = GKRule(predicate: playerFarPredicate, assertingFact:self.huntPlayerFact, grade: 1.00)
         
-        ruleSystem.add(playerFarRule)
-        
-        let playerNearPredicate = NSPredicate(format: "$distanceToPlayer.doubleValue >= 200.0")
-        
-        let playerNearRule = GKRule(predicate: playerNearPredicate, retractingFact: self.huntPlayerFact, grade: 1.00)
-        
-        ruleSystem.add(playerNearRule)
         
         
     }
     
-    func update(currentTime: TimeInterval){
-        
-        print("Update the current fish...")
     
-        self.ruleSystem.state["distanceToPlayer"] = NSNumber(value: self.distanceToPlayer)
+    func checkIsCoheringStatus(){
+        let isCohering = self.ruleSystem.grade(forFact: self.cohereWithPlayerFact) > 0.0
         
-        self.ruleSystem.reset()
-        self.ruleSystem.evaluate()
-        
-        print("The grade for the huntPlayerFact is: \(self.ruleSystem.grade(forFact: self.huntPlayerFact))")
-        
-        let isHunting = self.ruleSystem.grade(forFact: self.huntPlayerFact) > 0.0
-        
-        if (isHunting) {
-            print("Current fish is hunting...")
-
+        if (isCohering) {
+            print("Current fish is cohereing...")
+            
             
             self.agent.behavior = GKBehavior(goals: [
-                FishMandate.HuntPlayer(self.player).FishGoal,
-                FishMandate.ReachVelocity(20.0).FishGoal
+               // FishMandate.CohereWithPlayer(self.player).FishGoal,
+                FishMandate.AlignWithPlayer(self.player).FishGoal,
+                FishMandate.ReachVelocity(50.0).FishGoal
                 ], andWeights: [
-                NSNumber(floatLiteral: 1.00),
-                NSNumber(floatLiteral: 5.00)
+                    NSNumber(floatLiteral: 100.00),
+                 //   NSNumber(floatLiteral: 1.00),
+                    NSNumber(floatLiteral: 1.00)
                 ])
             
         }else {
-            print("Current fish is not hunting...")
-
+            print("Current fish is not cohering...")
+            
             self.agent.behavior = GKBehavior(goals: [
                 FishMandate.Wander(500.0).FishGoal
                 ], andWeights: [
@@ -199,7 +251,82 @@ class DynamicFish: AgentNode{
                 ])
             
         }
+    }
+    
+    func checkIsFleeingStatus(){
+        let isFleeing = self.ruleSystem.grade(forFact: self.fleePlayerFact) > 0.0
+
+        if (isFleeing) {
+            
+            
+            self.agent.behavior = GKBehavior(goals: [
+                FishMandate.FleePlayer(self.player).FishGoal,
+                FishMandate.ReachVelocity(20.0).FishGoal
+                ], andWeights: [
+                    NSNumber(floatLiteral: 1.00),
+                    NSNumber(floatLiteral: 5.00)
+                ])
+            
+        }else {
+            
+            self.agent.behavior = GKBehavior(goals: [
+                FishMandate.Wander(500.0).FishGoal
+                ], andWeights: [
+                    NSNumber(floatLiteral: 1.00)
+                ])
+            
+        }
+
+    }
+    
+    func checkIsHuntingStatus(){
+        let isHunting = self.ruleSystem.grade(forFact: self.huntPlayerFact) > 0.0
+        
+        if (isHunting) {
+            
+            
+            self.agent.behavior = GKBehavior(goals: [
+                FishMandate.HuntPlayer(self.player).FishGoal,
+                FishMandate.ReachVelocity(20.0).FishGoal
+                ], andWeights: [
+                    NSNumber(floatLiteral: 1.00),
+                    NSNumber(floatLiteral: 5.00)
+                ])
+            
+        }else {
+            
+            self.agent.behavior = GKBehavior(goals: [
+                FishMandate.Wander(500.0).FishGoal
+                ], andWeights: [
+                    NSNumber(floatLiteral: 1.00)
+                ])
+            
+        }
+
+
+    }
+    
+    func update(currentTime: TimeInterval){
+        
+    
+        self.ruleSystem.state["distanceToPlayer"] = NSNumber(value: self.distanceToPlayer)
+        
+        self.ruleSystem.reset()
+        self.ruleSystem.evaluate()
+        
+        
+        if(player.fishType == self.fishType.getPredator()){
+            checkIsFleeingStatus()
+        } else if(player.fishType == self.fishType.getPrey()){
+            checkIsHuntingStatus()
+        } else if(player.fishType == self.fishType){
+            checkIsCoheringStatus()
+        }
+        
+        
         
     }
 }
+
+
 
