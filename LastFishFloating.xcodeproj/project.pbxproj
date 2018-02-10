@@ -18,6 +18,7 @@
 		BD36853F1FA078B700CB4BFA /* boardBackground1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD36853E1FA078B700CB4BFA /* boardBackground1.sks */; };
 		BD3685411FA078C900CB4BFA /* BoardElements.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD3685401FA078C900CB4BFA /* BoardElements.sks */; };
 		BD3685461FA083B600CB4BFA /* BoardBaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3685451FA083B600CB4BFA /* BoardBaseScene.swift */; };
+		BD38E08D1FECF235001970D0 /* background2.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD38E08C1FECF235001970D0 /* background2.sks */; };
 		BD3BB03B1F9C917E00DCA40E /* background1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB03A1F9C917E00DCA40E /* background1.sks */; };
 		BD3BB0421F9C94C800DCA40E /* Night at the Beach.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB03F1F9C94BF00DCA40E /* Night at the Beach.mp3 */; };
 		BD3BB0431F9C94CC00DCA40E /* Polka Train.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB0401F9C94BF00DCA40E /* Polka Train.mp3 */; };
@@ -25,7 +26,6 @@
 		BD3BB0451F9C94D100DCA40E /* Sad Town.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB03E1F9C94BF00DCA40E /* Sad Town.mp3 */; };
 		BD3BB0461F9C94D300DCA40E /* Space Cadet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD3BB03D1F9C94BF00DCA40E /* Space Cadet.mp3 */; };
 		BD3FED821F9B70E400910AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FED811F9B70E400910AF7 /* AppDelegate.swift */; };
-		BD3FED861F9B70E400910AF7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD3FED851F9B70E400910AF7 /* Actions.sks */; };
 		BD3FED881F9B70E400910AF7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FED871F9B70E400910AF7 /* GameScene.swift */; };
 		BD3FED8A1F9B70E400910AF7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FED891F9B70E400910AF7 /* GameViewController.swift */; };
 		BD3FED8D1F9B70E400910AF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3FED8B1F9B70E400910AF7 /* Main.storyboard */; };
@@ -45,6 +45,7 @@
 		BD3FEDCC1F9B777600910AF7 /* FishOutlineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3FEDCB1F9B777600910AF7 /* FishOutlineState.swift */; };
 		BD427EDD1F9DFDB800502FF7 /* bubbles1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD427EDB1F9DFDB800502FF7 /* bubbles1.sks */; };
 		BD427EDE1F9DFDB800502FF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD427EDC1F9DFDB800502FF7 /* Assets.xcassets */; };
+		BD4404431FA211FD00DB917F /* dynamicBackground1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD4404421FA211FD00DB917F /* dynamicBackground1.sks */; };
 		BD4436961F9CA7D500D9D4D9 /* PathConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4436951F9CA7D500D9D4D9 /* PathConfiguration.swift */; };
 		BD4436981F9CB2B500D9D4D9 /* SKSceneReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4436971F9CB2B500D9D4D9 /* SKSceneReader.swift */; };
 		BD44369A1F9CB53400D9D4D9 /* Plan in Resources */ = {isa = PBXBuildFile; fileRef = BD4436991F9CB53400D9D4D9 /* Plan */; };
@@ -88,6 +89,7 @@
 		BD36853E1FA078B700CB4BFA /* boardBackground1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = boardBackground1.sks; sourceTree = "<group>"; };
 		BD3685401FA078C900CB4BFA /* BoardElements.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BoardElements.sks; sourceTree = "<group>"; };
 		BD3685451FA083B600CB4BFA /* BoardBaseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardBaseScene.swift; sourceTree = "<group>"; };
+		BD38E08C1FECF235001970D0 /* background2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = background2.sks; sourceTree = "<group>"; };
 		BD3BB03A1F9C917E00DCA40E /* background1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = background1.sks; sourceTree = "<group>"; };
 		BD3BB03D1F9C94BF00DCA40E /* Space Cadet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Space Cadet.mp3"; sourceTree = "<group>"; };
 		BD3BB03E1F9C94BF00DCA40E /* Sad Town.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sad Town.mp3"; sourceTree = "<group>"; };
@@ -96,7 +98,6 @@
 		BD3BB0411F9C94C000DCA40E /* Sad Descent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sad Descent.mp3"; sourceTree = "<group>"; };
 		BD3FED7E1F9B70E400910AF7 /* LastFishFloating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastFishFloating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3FED811F9B70E400910AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BD3FED851F9B70E400910AF7 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		BD3FED871F9B70E400910AF7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		BD3FED891F9B70E400910AF7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		BD3FED8C1F9B70E400910AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,7 +121,8 @@
 		BD3FEDC91F9B751A00910AF7 /* FishOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishOrientation.swift; sourceTree = "<group>"; };
 		BD3FEDCB1F9B777600910AF7 /* FishOutlineState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishOutlineState.swift; sourceTree = "<group>"; };
 		BD427EDB1F9DFDB800502FF7 /* bubbles1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bubbles1.sks; sourceTree = "<group>"; };
-		BD427EDC1F9DFDB800502FF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD427EDC1F9DFDB800502FF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SKSFiles/Assets.xcassets; sourceTree = "<group>"; };
+		BD4404421FA211FD00DB917F /* dynamicBackground1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = dynamicBackground1.sks; sourceTree = "<group>"; };
 		BD4436951F9CA7D500D9D4D9 /* PathConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathConfiguration.swift; sourceTree = "<group>"; };
 		BD4436971F9CB2B500D9D4D9 /* SKSceneReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSceneReader.swift; sourceTree = "<group>"; };
 		BD4436991F9CB53400D9D4D9 /* Plan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Plan; sourceTree = "<group>"; };
@@ -170,14 +172,24 @@
 			path = BoardScenes;
 			sourceTree = "<group>";
 		};
+		BD38E0891FECF026001970D0 /* Miscellaneous */ = {
+			isa = PBXGroup;
+			children = (
+				BD3685421FA0837600CB4BFA /* BoardScenes */,
+				BDF3F7B51FA18013009E22EC /* AlternativeCharacters */,
+				BD36853E1FA078B700CB4BFA /* boardBackground1.sks */,
+				BD3685401FA078C900CB4BFA /* BoardElements.sks */,
+				BD4404421FA211FD00DB917F /* dynamicBackground1.sks */,
+			);
+			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
 		BD3BB0391F9C916800DCA40E /* SKSFiles */ = {
 			isa = PBXGroup;
 			children = (
 				BD3BB03A1F9C917E00DCA40E /* background1.sks */,
+				BD38E08C1FECF235001970D0 /* background2.sks */,
 				BD427EDB1F9DFDB800502FF7 /* bubbles1.sks */,
-				BD427EDC1F9DFDB800502FF7 /* Assets.xcassets */,
-				BD36853E1FA078B700CB4BFA /* boardBackground1.sks */,
-				BD3685401FA078C900CB4BFA /* BoardElements.sks */,
 			);
 			path = SKSFiles;
 			sourceTree = "<group>";
@@ -225,23 +237,22 @@
 		BD3FED801F9B70E400910AF7 /* LastFishFloating */ = {
 			isa = PBXGroup;
 			children = (
-				BDF3F7B51FA18013009E22EC /* AlternativeCharacters */,
-				BD3685421FA0837600CB4BFA /* BoardScenes */,
+				BD3BB0391F9C916800DCA40E /* SKSFiles */,
 				BDA9162D1FA056E600B25CD0 /* Collectibles */,
 				BD3BB0471F9C94D900DCA40E /* SoundEffects */,
 				BD3BB03C1F9C94AE00DCA40E /* BackgroundMusic */,
-				BD3BB0391F9C916800DCA40E /* SKSFiles */,
 				BD3FEDC21F9B749900910AF7 /* Characters */,
+				BD427EDC1F9DFDB800502FF7 /* Assets.xcassets */,
 				BD3FEDBF1F9B739C00910AF7 /* GameUtil */,
 				BD3FEDB51F9B722500910AF7 /* Scenes */,
 				BD3FED811F9B70E400910AF7 /* AppDelegate.swift */,
-				BD3FED851F9B70E400910AF7 /* Actions.sks */,
 				BD3FED871F9B70E400910AF7 /* GameScene.swift */,
 				BD3FED891F9B70E400910AF7 /* GameViewController.swift */,
 				BD3FED8B1F9B70E400910AF7 /* Main.storyboard */,
 				BD3FED8E1F9B70E400910AF7 /* Assets.xcassets */,
 				BD3FED901F9B70E400910AF7 /* LaunchScreen.storyboard */,
 				BD3FED931F9B70E400910AF7 /* Info.plist */,
+				BD38E0891FECF026001970D0 /* Miscellaneous */,
 				BD4436991F9CB53400D9D4D9 /* Plan */,
 			);
 			path = LastFishFloating;
@@ -443,6 +454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD38E08D1FECF235001970D0 /* background2.sks in Resources */,
 				BD3BB0431F9C94CC00DCA40E /* Polka Train.mp3 in Resources */,
 				BD3BB03B1F9C917E00DCA40E /* background1.sks in Resources */,
 				BD3BB0421F9C94C800DCA40E /* Night at the Beach.mp3 in Resources */,
@@ -454,10 +466,10 @@
 				BD3BB0451F9C94D100DCA40E /* Sad Town.mp3 in Resources */,
 				BD3685411FA078C900CB4BFA /* BoardElements.sks in Resources */,
 				BD3FED921F9B70E400910AF7 /* LaunchScreen.storyboard in Resources */,
+				BD4404431FA211FD00DB917F /* dynamicBackground1.sks in Resources */,
 				BD44369A1F9CB53400D9D4D9 /* Plan in Resources */,
 				BD3BB0461F9C94D300DCA40E /* Space Cadet.mp3 in Resources */,
 				BD36853F1FA078B700CB4BFA /* boardBackground1.sks in Resources */,
-				BD3FED861F9B70E400910AF7 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

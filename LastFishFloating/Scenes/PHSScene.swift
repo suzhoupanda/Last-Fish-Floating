@@ -21,28 +21,26 @@ class PHSScene: BaseScene{
         
         
         
-        let fish1 = Fish(baseScene: self, fishType: .OrangeFish, position: CGPoint(x: 100, y: 100), radius: 40.0)
+        let fish1 = Fish(baseScene: self, fishType: .OrangeFish, position: CGPoint(x: 100, y: 100), zRotation: 0.00, radius: 40.0)
         fish1.configureAgent(withMaxSpeed: 20, andWithMaxAccelerationOf: 40)
 
-        let fish2 = Fish(baseScene: self, fishType: .OrangeFish, position: CGPoint(x: 300, y: 40), radius: 40.0)
+        let fish2 = Fish(baseScene: self, fishType: .OrangeFish, position: CGPoint(x: 300, y: 40), zRotation: 0.00, radius: 40.0)
         fish2.configureAgent(withMaxSpeed: 20, andWithMaxAccelerationOf: 40)
 
-        let fish3 = Fish(baseScene: self, fishType: .OrangeFish, position: CGPoint(x: -50, y: -100), radius: 40.0)
+        let fish3 = Fish(baseScene: self, fishType: .OrangeFish, position: CGPoint(x: -50, y: -100), zRotation: 0.00, radius: 40.0)
         fish3.configureAgent(withMaxSpeed: 20, andWithMaxAccelerationOf: 40)
 
         
         self.fishManager = FishManager(baseScene: self)
         
-        //self.fishManager.addPathFollowingFishGroup(fishGroup: [fish1,fish2,fish3], avoidsObstacles: false)
         
-        self.fishManager.addPlayerHuntingFishGroup(fishGroup: [fish1,fish2,fish3], avoidsObstacles: true)
+       self.fishManager.addPlayerHuntingFishGroup(fishGroup: [fish1,fish2,fish3], avoidsObstacles: true)
         
-       // self.fishManager.addFlockingPredatorFish(fishGroup: self.flockFish!)
         
         if let scene = SKScene(fileNamed: "background1"){
             
-            //TOOD: Need to initialize the paths for the secene
-            //self.fishManager.addPathFollowingFishGroup(fishGroup: [fish1,fish2,fish3])
+            //TODO: Need to initialize the paths for the secene
+            self.fishManager.addPathFollowingFishGroup(fishGroup: [fish1,fish2,fish3])
             
             
         }
@@ -51,7 +49,7 @@ class PHSScene: BaseScene{
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
         
-        self.fishManager.update(currentTime: currentTime)
+       self.fishManager.update(currentTime: currentTime)
         
     }
     

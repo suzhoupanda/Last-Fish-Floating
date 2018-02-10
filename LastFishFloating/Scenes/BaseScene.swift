@@ -14,7 +14,13 @@ import GameplayKit
 
 class BaseScene: SKScene{
     
-    let agentSystem = GKComponentSystem(componentClass: GKAgent2D.self)
+    lazy var agentSystem: GKComponentSystem = {
+        
+       let agentSystem = GKComponentSystem(componentClass: FishAgent.self)
+        return agentSystem
+        
+    }()
+    
     let trackingAgent = GKAgent2D()
     var player: Player!
 
@@ -64,7 +70,7 @@ class BaseScene: SKScene{
                 
             }
             
-            return Fish(baseScene: self, fishType: fishType, position: pos, radius: radius)
+            return Fish(baseScene: self, fishType: fishType, position: pos, zRotation: 0.00, radius: radius)
             
         })
     }
@@ -87,11 +93,11 @@ class BaseScene: SKScene{
                         
                         let pos = node.position
                         
-                        let blowFish = Fish(baseScene: self, fishType: .BlowFish, position: pos, radius: 5.00)
+                        let blowFish = Fish(baseScene: self, fishType: .BlowFish, position: pos, zRotation: 0.00, radius: 5.00)
                         
                         obstacleFish.append(blowFish)
                         agentSystem.addComponent(blowFish.agent)
-                        blowFish.move(toParent: worldNode)
+                        blowFish.node.move(toParent: worldNode)
                     }
                 })
                 
@@ -213,23 +219,41 @@ class BaseScene: SKScene{
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
+       
+        configureNodeLayers()
+        configurePhysicsWorld()
+        configureBackgroundSceneryAndPlaceholderNodes()
+        configureBackgroundMusic()
+        configurePlayer()
+        configureCamera()
+        
+ 
+    }
+    
+    private func configureNodeLayers(){
         addChild(overlayNode)
         addChild(worldNode)
         addChild(backgroundNode)
         addChild(graphNode)
         
+    }
     
+    private func configurePhysicsWorld(){
         self.physicsWorld.contactDelegate = self
-        
+
+    }
+    
+    private func configureBackgroundSceneryAndPlaceholderNodes(){
         if let scene = SKScene(fileNamed: self.sceneName){
             
             if let background = scene.childNode(withName: "Root"){
                 
                 background.move(toParent: backgroundNode)
                 
-              
+                
                 
             }
+            
             
             if let obstacleNode = scene.childNode(withName: "Obstacles"){
                 
@@ -241,7 +265,7 @@ class BaseScene: SKScene{
                 
                 
                 self.flockNode = flockNode
-        
+                
             }
             
             if let pathNode = scene.childNode(withName: "PathNode"){
@@ -251,13 +275,22 @@ class BaseScene: SKScene{
                 
             }
             
-           
+            
         }
         
+    }
+    
+    private func configureBackgroundMusic(){
         let backgroundSound = SKAudioNode(fileNamed: "Polka Train.mp3")
         self.addChild(backgroundSound)
         
-        self.player = Player(baseScene: self, fishType: .BlueFish, position: CGPoint.zero, radius: 50.0)
+        
+        
+    }
+    
+    private func configurePlayer(){
+        self.player = Player(baseScene: self, fishType: .BlueFish, position: CGPoint.zero, zRotation: 0.00, radius: 50.0)
+        
         
         self.player.agent.behavior = GKBehavior(goals: [self.seekGoal,self.stopGoal,self.seekingSpeedGoal])
         
@@ -265,10 +298,14 @@ class BaseScene: SKScene{
         
         self.agentSystem.addComponent(self.player.agent)
         
+    }
+    
+    private func configureCamera(){
         let cam = SKCameraNode()
         self.camera = cam
         worldNode.addChild(self.camera!)
-    
+        
+        
         
     }
     
@@ -277,15 +314,15 @@ class BaseScene: SKScene{
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        _seeking = false
+       self.seeking = false
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        _seeking = false
+        self.seeking = false
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        _seeking = true
+        self.seeking = true
         
         let touch = touches.first! as UITouch
         let touchPosition = touch.location(in: worldNode)
@@ -298,7 +335,7 @@ class BaseScene: SKScene{
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        self.seeking = true
         
     }
     
@@ -320,7 +357,7 @@ class BaseScene: SKScene{
         super.didSimulatePhysics()
         
         if self.camera != nil{
-            camera!.position = player.position
+            camera!.position = player.node.position
         }
         
     }

@@ -25,7 +25,25 @@ class AssertedFact: NSObject{
    
 }
 
-class DynamicFish: AgentNode{
+/**
+struct DynamicFishConfiguration{
+    
+    static let DefaultConfiguration = DynamicFishConfiguration(fleeSpeed: 100.0, huntSpeed: 100.0, cohereSpeed: 100.0, wanderSpeed: 100.0, fleeGoalWeight: 1.00, huntGoalWeight: 1.00, cohereGoalWeight: 1.00, wanderGoalWeight: 1.00, reachSpeedGoalWeight: 10.0)
+    
+    var fleeSpeed: Float
+    var huntSpeed: Float
+    var cohereSpeed: Float
+    var wanderSpeed: Float
+    
+    var fleeGoalWeight: Double
+    var huntGoalWeight: Double
+    var cohereGoalWeight: Double
+    var wanderGoalWeight: Double
+    var reachSpeedGoalWeight: Double
+}
+
+
+class DynamicFish: Fish{
     
     
     enum FishMandate{
@@ -107,6 +125,8 @@ class DynamicFish: AgentNode{
         return self.baseScene.player
     }
     
+    var fishType: FishType!
+    
     var distanceToPlayer: Double{
         
         let vectorPos = self.position.getVectorFloat2()
@@ -127,12 +147,35 @@ class DynamicFish: AgentNode{
         return self.fishType.getColliderType()
     }
     
-    init(baseScene: BaseScene, fishType: FishType, position: CGPoint, radius: Float) {
+    var fleeSpeed: Float = 100.0
+    var huntSpeed: Float = 100.0
+    var cohereSpeed: Float = 100.0
+    var wanderSpeed: Float = 1.0
+    
+    var fleeGoalWeight: Double = 10.0
+    var huntGoalWeight: Double = 10.0
+    var cohereGoalWeight: Double = 10.0
+    var wanderGoalWeight: Double = 1.0
+    var reachSpeedGoalWeight: Double = 1.0
+    
+    init(baseScene: BaseScene, fishType: FishType, position: CGPoint, radius: Float, fishConfiguration: DynamicFishConfiguration = DynamicFishConfiguration.DefaultConfiguration) {
         
         
         let defaultTexture = fishType.getTexture(forOrientation: .Right, andForOutlineState: .Unoutlined, isDead: false)
         
         super.init(withScene: baseScene, texture: defaultTexture, radius: radius, position: position)
+        
+        self.fleeSpeed = fishConfiguration.fleeSpeed
+        self.huntSpeed = fishConfiguration.huntSpeed
+        self.cohereSpeed = fishConfiguration.cohereSpeed
+        self.wanderSpeed = fishConfiguration.wanderSpeed
+        
+        self.fleeGoalWeight = fishConfiguration.fleeGoalWeight
+        self.huntGoalWeight = fishConfiguration.huntGoalWeight
+        self.cohereGoalWeight = fishConfiguration.cohereGoalWeight
+        self.wanderGoalWeight = fishConfiguration.wanderGoalWeight
+        
+        
         
         self.fishType = fishType
         
@@ -232,22 +275,23 @@ class DynamicFish: AgentNode{
             
             
             self.agent.behavior = GKBehavior(goals: [
-               // FishMandate.CohereWithPlayer(self.player).FishGoal,
                 FishMandate.AlignWithPlayer(self.player).FishGoal,
-                FishMandate.ReachVelocity(50.0).FishGoal
+                FishMandate.ReachVelocity(self.cohereSpeed).FishGoal
                 ], andWeights: [
-                    NSNumber(floatLiteral: 100.00),
-                 //   NSNumber(floatLiteral: 1.00),
-                    NSNumber(floatLiteral: 1.00)
+                    NSNumber(floatLiteral: self.cohereGoalWeight),
+                    NSNumber(floatLiteral: self.reachSpeedGoalWeight)
                 ])
             
         }else {
             print("Current fish is not cohering...")
             
             self.agent.behavior = GKBehavior(goals: [
-                FishMandate.Wander(500.0).FishGoal
+                FishMandate.Wander(10.0).FishGoal,
+                FishMandate.ReachVelocity(self.wanderSpeed).FishGoal
                 ], andWeights: [
-                    NSNumber(floatLiteral: 1.00)
+                    NSNumber(floatLiteral: self.wanderGoalWeight),
+                    NSNumber(floatLiteral: self.reachSpeedGoalWeight)
+
                 ])
             
         }
@@ -261,18 +305,21 @@ class DynamicFish: AgentNode{
             
             self.agent.behavior = GKBehavior(goals: [
                 FishMandate.FleePlayer(self.player).FishGoal,
-                FishMandate.ReachVelocity(20.0).FishGoal
+                FishMandate.ReachVelocity(self.fleeSpeed).FishGoal
                 ], andWeights: [
-                    NSNumber(floatLiteral: 1.00),
-                    NSNumber(floatLiteral: 5.00)
+                    NSNumber(floatLiteral: self.fleeGoalWeight),
+                    NSNumber(floatLiteral: self.reachSpeedGoalWeight)
                 ])
             
         }else {
             
             self.agent.behavior = GKBehavior(goals: [
-                FishMandate.Wander(500.0).FishGoal
+                FishMandate.Wander(10.0).FishGoal,
+                FishMandate.ReachVelocity(self.wanderSpeed).FishGoal
                 ], andWeights: [
-                    NSNumber(floatLiteral: 1.00)
+                    NSNumber(floatLiteral: self.wanderGoalWeight),
+                    NSNumber(floatLiteral: self.reachSpeedGoalWeight)
+
                 ])
             
         }
@@ -287,18 +334,21 @@ class DynamicFish: AgentNode{
             
             self.agent.behavior = GKBehavior(goals: [
                 FishMandate.HuntPlayer(self.player).FishGoal,
-                FishMandate.ReachVelocity(20.0).FishGoal
+                FishMandate.ReachVelocity(self.huntSpeed).FishGoal
                 ], andWeights: [
-                    NSNumber(floatLiteral: 1.00),
-                    NSNumber(floatLiteral: 5.00)
+                    NSNumber(floatLiteral: self.huntGoalWeight),
+                    NSNumber(floatLiteral: self.reachSpeedGoalWeight)
                 ])
             
         }else {
             
             self.agent.behavior = GKBehavior(goals: [
-                FishMandate.Wander(500.0).FishGoal
+                FishMandate.Wander(10.0).FishGoal,
+                FishMandate.ReachVelocity(self.wanderSpeed).FishGoal
                 ], andWeights: [
-                    NSNumber(floatLiteral: 1.00)
+                    NSNumber(floatLiteral: self.wanderGoalWeight),
+                    NSNumber(floatLiteral: self.reachSpeedGoalWeight)
+
                 ])
             
         }
@@ -328,5 +378,5 @@ class DynamicFish: AgentNode{
     }
 }
 
-
+**/
 

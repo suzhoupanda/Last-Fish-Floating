@@ -10,10 +10,15 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-
+/**
 class DynamicFishBaseScene: BaseScene{
     
     var dynamicFishManager: DynamicFishManager!
+    
+    
+    var sameFishNode: DynamicFish?
+    var predatorNode: DynamicFish?
+    var preyNode: DynamicFish?
     
 
     override func didMove(to view: SKView) {
@@ -47,3 +52,4 @@ class DynamicFishBaseScene: BaseScene{
     
    
 }
+ **/

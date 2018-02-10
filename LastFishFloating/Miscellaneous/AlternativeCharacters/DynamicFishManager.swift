@@ -25,10 +25,15 @@ import GameplayKit
  BlueFish       is hunted by    OrangeFish
  **/
 
+/**
 class DynamicFishManager{
     
     unowned var baseScene: BaseScene
 
+    var predatorFish: [DynamicFish]?
+    var preyFish: [DynamicFish]?
+    var sameFish: [DynamicFish]?
+    
     var _redFish: [DynamicFish]?
     var _orangeFish: [DynamicFish]?
     var _blueFish: [DynamicFish]?
@@ -216,3 +221,5 @@ class DynamicFishManager{
         
     }
 }
+ 
+ **/

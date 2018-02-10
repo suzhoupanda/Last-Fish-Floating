@@ -65,7 +65,7 @@ struct ColliderType: OptionSet, Hashable{
         return Int(self.rawValue)
     }
     
-    //MARK: SpriteKit Physics Convenience
+    //MARK: Convenience Methods for SpriteKit Physics Properties
     
     //A value that can be assigned to an SKPhysicsBody's category mask property
     

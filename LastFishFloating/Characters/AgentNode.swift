@@ -11,70 +11,68 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-class AgentNode: SKSpriteNode, GKAgentDelegate{
+protocol FishAgentDelegate{
     
-    var agent: GKAgent2D!
+    func fishAgentWillUpdatePosition(_ agent: GKAgent2D,to agentPosition: CGPoint)
     
-    var baseScene: BaseScene!
+    func fishAgentWillUpdateOrientation(_ agent: GKAgent2D, to agentOrientation: FishOrientation)
     
-    var isActiveAgent: Bool = false
+    func fishAgentDidUpdatePosition(_ agent: GKAgent2D, to agentPosition: CGPoint)
     
-    var fishType: FishType = .BlueFish
+    func fishAgentDidUpdateOrientation(_ agent: GKAgent2D, to agentOrientation: FishOrientation)
+    
+}
 
-    var previousOrientation: FishOrientation?
+class FishAgent: GKAgent2D, GKAgentDelegate{
     
-    var orientation: FishOrientation?{
+     var fishAgentDelegate: FishAgentDelegate?
+
+
+    init(radius: Float, position: CGPoint, zRotation: CGFloat, maxSpeed: Float = 100, maxAcceleration: Float = 50) {
         
-        didSet{
-            
-            if let previousOrientation = oldValue, let currentOrientation = orientation, previousOrientation != currentOrientation{
-                
-                let newTexture = self.fishType.getTexture(forOrientation: currentOrientation, andForOutlineState: .Unoutlined, isDead: false)
-                
-                run(SKAction.setTexture(newTexture))
-                
-            }
-            
-        }
-    }
-    
-    init(withScene scene: BaseScene,texture: SKTexture, radius: Float, position: CGPoint) {
-        super.init(texture: texture, color: .clear, size: texture.size())
+        super.init()
+
+        self.radius = radius
+        self.rotation = Float(zRotation)
+        self.position = vector_float2(x: Float(position.x), y: Float(position.y))
         
-        self.baseScene = scene
-        self.position = position
-        self.zPosition = 10
-        scene.worldNode.addChild(self)
+        self.delegate = self
+        self.maxSpeed = maxSpeed
+        self.maxAcceleration = maxAcceleration
         
-        agent = GKAgent2D()
-        agent.radius = radius
-        agent.rotation = Float(zRotation)
-        agent.position = vector_float2(x: Float(position.x), y: Float(position.y))
-        agent.delegate = self
-        agent.maxSpeed = 100
-        agent.maxAcceleration = 50
-    }
-    
-    
-    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
-        super.init(texture: texture, color: color, size: size)
+
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     
-    func configureAgent(withMaxSpeed speed: Float, andWithMaxAccelerationOf acceleration: Float){
+
+    func configureAgent(withMaxSpeed speed: Float, andWithMaxAccelerationOf acceleration: Float, withRadius radius: Float){
         
-        self.agent.maxSpeed = speed
-        self.agent.maxAcceleration = acceleration
+        self.maxSpeed = speed
+        self.maxAcceleration = acceleration
+        self.radius = radius
         
     }
     
-    //MARK:     ****GKAgentDelegate Methods
+    //MARK:     **** GKAgentDelegate Methods
     
     func agentWillUpdate(_ agent: GKAgent) {
+    
+        let agent = agent as! GKAgent2D
+
+        let agentPosition = agent.position.getCGPoint()
+
+        fishAgentDelegate?.fishAgentWillUpdatePosition(self, to: agentPosition)
+        
+        
+        let xVelocity = agent.velocity.x
+        
+        let newOrientation: FishOrientation = xVelocity < 0.00 ? .Left : .Right
+        
+        fishAgentDelegate?.fishAgentWillUpdateOrientation(self, to: newOrientation)
         
     }
     
@@ -82,20 +80,17 @@ class AgentNode: SKSpriteNode, GKAgentDelegate{
         
         let agent = agent as! GKAgent2D
         
-        if(!isActiveAgent){
-            
-            let agentPosition = agent.position.getCGPoint()
-            self.position = agentPosition
-            
-            let agentVelocity = agent.velocity.x
-            self.orientation = agentVelocity < 0.00 ? .Left : .Right
-            
-            
-        } else {
-            
-            self.agent.position = self.position.getVectorFloat2()
-            
-        }
+        let agentPosition = agent.position.getCGPoint()
+        
+        fishAgentDelegate?.fishAgentDidUpdatePosition(self, to: agentPosition)
+        
+        
+        let xVelocity = agent.velocity.x
+        
+        let newOrientation: FishOrientation = (xVelocity < 0.00) ? .Left : .Right
+        
+        fishAgentDelegate?.fishAgentDidUpdateOrientation(self, to: newOrientation)
+        
         
         
     }
